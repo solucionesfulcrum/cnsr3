@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Examenes_Escaneados.models import paciente, examen
+from Asistencial.models import paciente, examen
 # Register your models here.
 
 class pacienteAdmin(admin.ModelAdmin):
