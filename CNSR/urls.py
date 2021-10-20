@@ -32,6 +32,7 @@ from django.conf.urls import url
 router = routers.DefaultRouter()
 router.register(r'paciente', viewsAsis.PacienteViewSet)
 router.register(r'examen', viewsAsis.ExamenViewSet)
+router.register(r'archivo', viewsAsis.ArchivoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

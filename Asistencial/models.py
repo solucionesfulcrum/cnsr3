@@ -16,7 +16,7 @@ class paciente(models.Model):
         return (self.nombres+' '+self.ape_pat+' '+self.ape_mat)
 
 class examen(models.Model):
-    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE, null=True)
+    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
     tipo_exam = models.CharField(max_length=50, null=True)
     archivo_exam = models.FileField(upload_to='media/', null=True)
     estado_lectura = models.CharField(max_length=30, null=True)
@@ -30,3 +30,12 @@ class examen(models.Model):
 
     def __str__(self):
         return self.tipo_exam
+
+class archivo(models.Model):
+    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
+    numHisCli = models.CharField(max_length=30, null=True)
+    numBalda = models.CharField(max_length=30, null=True)
+    estado = models.CharField(max_length=5, default='1')
+
+    def __str__(self):
+        return self.numHisCli

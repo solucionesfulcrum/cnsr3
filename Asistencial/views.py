@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from Asistencial.models import paciente, examen
-from Asistencial.serializers import PacienteSerializer, ExamenSerializer
+from Asistencial.models import paciente, examen, archivo
+from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer
 from rest_framework import permissions, viewsets, filters
 
 # Create your views here.
@@ -12,7 +12,7 @@ class PacienteViewSet(viewsets.ModelViewSet):
     serializer_class = PacienteSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['nombres']
+    search_fields = ['=num_doc']
     
 class ExamenViewSet(viewsets.ModelViewSet):
     """
@@ -23,3 +23,13 @@ class ExamenViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['tipo_exa']
+
+class ArchivoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = archivo.objects.all().order_by('-id')
+    serializer_class = ArchivoSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=paciente__id']
