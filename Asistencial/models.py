@@ -36,6 +36,7 @@ class archivo(models.Model):
     numHisCli = models.CharField(max_length=30, null=True)
     numBalda = models.CharField(max_length=30, null=True)
     estado = models.CharField(max_length=5, default='1')
+    user_reg = models.CharField(max_length=30, null=True)
 
     def __str__(self):
         return self.numHisCli

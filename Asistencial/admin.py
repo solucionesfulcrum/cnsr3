@@ -10,7 +10,7 @@ class examenAdmin(admin.ModelAdmin):
     search_fields = ('paciente__nombres', 'paciente__ape_pat', 'paciente__ape_mat',)
 
 class archivoAdmin(admin.ModelAdmin):
-    list_display = ('paciente','numHisCli','numBalda','estado')
+    list_display = ('paciente','numHisCli','numBalda','estado','user_reg')
     search_fields = ('numHisCli',)
 
 admin.site.register(paciente, pacienteAdmin)
