@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag
+from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq
 from rest_framework import serializers
 
 class PacienteSerializer(serializers.HyperlinkedModelSerializer):
@@ -54,3 +54,13 @@ class bienAmbienteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = bienAmbiente
         fields = '__all__'         
+
+class proveedorSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = proveedor
+        fields = '__all__'         
+
+class provMaqSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = provMaq
+        fields = '__all__' 

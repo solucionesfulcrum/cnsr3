@@ -33,6 +33,8 @@ router = routers.DefaultRouter()
 router.register(r'paciente', viewsAsis.PacienteViewSet)
 router.register(r'examen', viewsAsis.ExamenViewSet)
 router.register(r'archivo', viewsAsis.ArchivoViewSet)
+router.register(r'proveedores', viewsAsis.proveedorViewSet)
+router.register(r'provMaq', viewsAsis.provMaqViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

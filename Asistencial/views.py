@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, bienPersonal, bienpat, dependencia, ambiente, personal
-from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer
+from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq
+from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer
 from rest_framework import permissions, viewsets, filters
 
 # Create your views here.
@@ -103,3 +103,23 @@ class bienAmbienteViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['=bienpat__id']
+
+class proveedorViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = proveedor.objects.all()
+    serializer_class = proveedorSerializer
+    permission_classes = [permissions.IsAuthenticated]  
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=rucProveedor']
+
+class provMaqViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = provMaq.objects.all()
+    serializer_class = provMaqSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['id']

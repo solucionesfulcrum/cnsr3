@@ -92,6 +92,25 @@ class bienpat(models.Model):
     def __str__(self):
         return self.desBien
 
+#Mantenimiento de Maquina
+
+class proveedor(models.Model):
+    rucProveedor = models.CharField(max_length=30, unique=True)
+    nombreProveedor = models.CharField(max_length=50)
+    telefProveedor = models.CharField(max_length=20)
+    direcProveedor = models.CharField(max_length=20, null=True)
+    estadoProveedor = models.CharField(max_length=5, default=1)
+
+    def __str__(self):
+        return self.nombreProveedor
+
+class provMaq(models.Model):
+    usobien = models.CharField(max_length=5)
+    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.usobien
+
 class bienImag(models.Model):
     imagen = models.ImageField(upload_to='fotos/')
     bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
