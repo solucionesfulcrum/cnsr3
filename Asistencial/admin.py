@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq
+from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, incidenciaDsi
 # Register your models here.
 
 class pacienteAdmin(admin.ModelAdmin):
@@ -49,6 +49,10 @@ class provMaqAdmin(admin.ModelAdmin):
     list_display = ('usobien','bienpat')
     search_fields = ('usobien',)
 
+class incidenciaDsiAdmin(admin.ModelAdmin):
+    list_display = ('personal','categoria','ambiente','clasiSolu','solucion')
+    search_fields = ('categoria',)
+
 admin.site.register(paciente, pacienteAdmin)
 admin.site.register(examen, examenAdmin)
 admin.site.register(archivo, archivoAdmin)
@@ -62,3 +66,5 @@ admin.site.register(bienAmbiente, bienAmbienteAdmin)
 
 admin.site.register(proveedor, proveedorAdmin)
 admin.site.register(provMaq, provMaqAdmin)
+
+admin.site.register(incidenciaDsi, incidenciaDsiAdmin)

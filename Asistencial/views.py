@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq
-from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer
+from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi
+from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer
 from rest_framework import permissions, viewsets, filters
 
 # Create your views here.
@@ -123,3 +123,13 @@ class provMaqViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['id']
+
+class incidenciaDsiViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = incidenciaDsi.objects.all()
+    serializer_class = incidenciaDsiSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=personal__dniPer']

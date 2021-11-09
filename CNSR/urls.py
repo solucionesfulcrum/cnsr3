@@ -35,6 +35,9 @@ router.register(r'examen', viewsAsis.ExamenViewSet)
 router.register(r'archivo', viewsAsis.ArchivoViewSet)
 router.register(r'proveedores', viewsAsis.proveedorViewSet)
 router.register(r'provMaq', viewsAsis.provMaqViewSet)
+router.register(r'personal', viewsAsis.personalViewSet)
+router.register(r'ambiente', viewsAsis.ambienteViewSet)
+router.register(r'incidenciaDsi', viewsAsis.incidenciaDsiViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
