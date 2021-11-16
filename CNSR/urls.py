@@ -36,6 +36,7 @@ router.register(r'archivo', viewsAsis.ArchivoViewSet)
 router.register(r'proveedores', viewsAsis.proveedorViewSet)
 router.register(r'provMaq', viewsAsis.provMaqViewSet)
 router.register(r'personal', viewsAsis.personalViewSet)
+router.register(r'dependencia', viewsAsis.dependenciaViewSet)
 router.register(r'ambiente', viewsAsis.ambienteViewSet)
 router.register(r'incidenciaDsi', viewsAsis.incidenciaDsiViewSet)
 

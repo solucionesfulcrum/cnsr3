@@ -72,7 +72,7 @@ class personalViewSet(viewsets.ModelViewSet):
     serializer_class = personalSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=codPlaPer']
+    search_fields = ['=dniPer']
 
 class bienImagViewSet(viewsets.ModelViewSet):
     """
@@ -128,7 +128,7 @@ class incidenciaDsiViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
-    queryset = incidenciaDsi.objects.all()
+    queryset = incidenciaDsi.objects.all().order_by('-id')
     serializer_class = incidenciaDsiSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]

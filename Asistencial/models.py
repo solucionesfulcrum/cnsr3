@@ -67,13 +67,13 @@ class personal(models.Model):
     fecNacPer = models.DateField(null=True)
     codPlaPer = models.CharField(max_length=50)
     regPer = models.CharField(max_length=50)
-    areaPer = models.CharField(max_length=50)
     cargoPer = models.CharField(max_length=50)
     nivelPer = models.CharField(max_length=50)
     telefoPer = models.CharField(max_length=50)
     correoPer = models.CharField(max_length=50)
     direcPer = models.CharField(max_length=50)
     estPer = models.CharField(max_length=5, default=1)
+    dependencia = models.ForeignKey(dependencia, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.codPlaPer
@@ -123,11 +123,21 @@ class bienAmbiente(models.Model):
     ambiente = models.ForeignKey(ambiente, on_delete=models.CASCADE)
     bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
 
+class maestro(models.Model):
+    codMaestro = models.CharField(max_length=10)
+    descripMaestro = models.CharField(max_length=50)
+    detalleMaestro = models.CharField(max_length=50)
+
 class incidenciaDsi(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
-    categoria = models.CharField(max_length=50)
-    ambiente = models.ForeignKey(ambiente, on_delete=models.CASCADE)
-    clasiSolu = models.CharField(max_length=50)
-    solucion = models.CharField(max_length=500)
+    problema = models.CharField(max_length=200)
+    clasiSolu = models.CharField(max_length=50, null=True)
+    solucion = models.CharField(max_length=500, null=True)
+    estado = models.CharField(max_length=10, default='Pendiente')
+    userReg = models.CharField(max_length=20)
+    fecha_reg = models.DateTimeField(auto_now=True)
+    numTicket = models.CharField(max_length=20)
+
+
     
     

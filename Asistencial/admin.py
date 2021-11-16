@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, incidenciaDsi
+from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi
 # Register your models here.
 
 class pacienteAdmin(admin.ModelAdmin):
@@ -32,8 +32,8 @@ class ambienteAdmin(admin.ModelAdmin):
     search_fields = ('codAmb',)
 
 class personalAdmin(admin.ModelAdmin):
-    list_display = ('dniPer','apePatPer','apeMatPer','nomPer','sexo','fecNacPer','codPlaPer','regPer','areaPer','cargoPer','nivelPer','telefoPer','correoPer','direcPer','estPer')
-    search_fields = ('codPlaPer','dniPer')
+    list_display = ('dniPer','apePatPer','apeMatPer','nomPer','sexo','fecNacPer','codPlaPer','regPer','cargoPer','nivelPer','telefoPer','correoPer','direcPer','estPer','dependencia')
+    search_fields = ('dniPer',)
 
 class bienPersonalAdmin(admin.ModelAdmin):
     list_display = ('personal','bienpat')
@@ -49,9 +49,13 @@ class provMaqAdmin(admin.ModelAdmin):
     list_display = ('usobien','bienpat')
     search_fields = ('usobien',)
 
+class maestroAdmin(admin.ModelAdmin):
+    list_display = ('codMaestro','descripMaestro','detalleMaestro')
+    search_fields = ('codMaestro',)
+
 class incidenciaDsiAdmin(admin.ModelAdmin):
-    list_display = ('personal','categoria','ambiente','clasiSolu','solucion')
-    search_fields = ('categoria',)
+    list_display = ('problema','clasiSolu','solucion','estado','userReg','fecha_reg','numTicket')
+    search_fields = ('id',)
 
 admin.site.register(paciente, pacienteAdmin)
 admin.site.register(examen, examenAdmin)
@@ -66,5 +70,7 @@ admin.site.register(bienAmbiente, bienAmbienteAdmin)
 
 admin.site.register(proveedor, proveedorAdmin)
 admin.site.register(provMaq, provMaqAdmin)
+
+admin.site.register(maestro, maestroAdmin)
 
 admin.site.register(incidenciaDsi, incidenciaDsiAdmin)
