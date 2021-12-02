@@ -34,11 +34,11 @@ class ambienteAdmin(admin.ModelAdmin):
 class personalAdmin(admin.ModelAdmin):
     list_display = ('dniPer','apePatPer','apeMatPer','nomPer','sexo','fecNacPer','codPlaPer','regPer','cargoPer','nivelPer','telefoPer','correoPer','direcPer','estPer','dependencia')
     search_fields = ('dniPer',)
+    ordering = ['apePatPer',]
 
 class bienPersonalAdmin(admin.ModelAdmin):
     list_display = ('personal','bienpat')
     autocomplete_fields = ('personal','bienpat')
-    ordering = ['bienpat','personal']
 
 class bienAmbienteAdmin(admin.ModelAdmin):
     list_display = ('ambiente','bienpat')
