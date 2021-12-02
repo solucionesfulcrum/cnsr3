@@ -90,7 +90,7 @@ class bienpat(models.Model):
     estBien = models.CharField(max_length=5, default=1)
     
     def __str__(self):
-        return self.desBien
+        return (self.codEti + " | " + self.desBien)
 
 #Mantenimiento de Maquina
 
