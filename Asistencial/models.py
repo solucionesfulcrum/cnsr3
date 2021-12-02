@@ -76,7 +76,7 @@ class personal(models.Model):
     dependencia = models.ForeignKey(dependencia, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.codPlaPer
+        return (self.apePatPer + " " + self.apeMatPer + " " + self.nomPer)
 
 class bienpat(models.Model):
     codEti = models.CharField(max_length=30, unique=True)
