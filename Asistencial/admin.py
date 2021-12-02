@@ -38,6 +38,7 @@ class personalAdmin(admin.ModelAdmin):
 class bienPersonalAdmin(admin.ModelAdmin):
     list_display = ('personal','bienpat')
     autocomplete_fields = ('personal','bienpat')
+    ordering = ['bienpat','personal']
 
 class bienAmbienteAdmin(admin.ModelAdmin):
     list_display = ('ambiente','bienpat')
