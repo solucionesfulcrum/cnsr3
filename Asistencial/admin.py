@@ -37,9 +37,11 @@ class personalAdmin(admin.ModelAdmin):
 
 class bienPersonalAdmin(admin.ModelAdmin):
     list_display = ('personal','bienpat')
+    autocomplete_fields = ('personal','bienpat')
 
 class bienAmbienteAdmin(admin.ModelAdmin):
     list_display = ('ambiente','bienpat')
+    autocomplete_fields = ('ambiente','bienpat')
 
 class proveedorAdmin(admin.ModelAdmin):
     list_display = ('rucProveedor','nombreProveedor','telefProveedor','direcProveedor','estadoProveedor')
