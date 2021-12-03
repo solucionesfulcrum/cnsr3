@@ -1,6 +1,9 @@
 from django.contrib import admin
 from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi
 # Register your models here.
+class maestroAdmin(admin.ModelAdmin):
+    list_display = ('codMaestro','descripMaestro','detalleMaestro')
+    search_fields = ('codMaestro',)
 
 class pacienteAdmin(admin.ModelAdmin):
     list_display = ('tipo_doc','num_doc','ape_pat','ape_mat','nombres','fecha_nac','estado')
@@ -52,13 +55,12 @@ class provMaqAdmin(admin.ModelAdmin):
     list_display = ('usobien','bienpat')
     search_fields = ('usobien',)
 
-class maestroAdmin(admin.ModelAdmin):
-    list_display = ('codMaestro','descripMaestro','detalleMaestro')
-    search_fields = ('codMaestro',)
-
 class incidenciaDsiAdmin(admin.ModelAdmin):
-    list_display = ('problema','clasiSolu','solucion','estado','userReg','fecha_reg','numTicket')
+    list_display = ('problema','clasiSolu','solucion','estado','userReg','fecha_reg','numTicket','estado')
     search_fields = ('id',)
+
+
+admin.site.register(maestro, maestroAdmin)
 
 admin.site.register(paciente, pacienteAdmin)
 admin.site.register(examen, examenAdmin)
@@ -74,6 +76,5 @@ admin.site.register(bienAmbiente, bienAmbienteAdmin)
 admin.site.register(proveedor, proveedorAdmin)
 admin.site.register(provMaq, provMaqAdmin)
 
-admin.site.register(maestro, maestroAdmin)
 
 admin.site.register(incidenciaDsi, incidenciaDsiAdmin)

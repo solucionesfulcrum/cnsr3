@@ -1,9 +1,19 @@
 from django.shortcuts import render
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi
-from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer
+from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro
+from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer
 from rest_framework import permissions, viewsets, filters
 
 # Create your views here.
+class maestroViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = maestro.objects.all()
+    serializer_class = maestroSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=id']
+
 class PacienteViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.

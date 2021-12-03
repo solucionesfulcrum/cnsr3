@@ -1,6 +1,13 @@
 from django.db import models
 
 # Create your models here.
+class maestro(models.Model):
+    codMaestro = models.CharField(max_length=10)
+    descripMaestro = models.CharField(max_length=50)
+    detalleMaestro = models.CharField(max_length=50)
+
+    def __str__(self):
+        return (self.descripMaestro)
 
 class paciente(models.Model):
     tipo_doc = models.CharField(max_length=40)
@@ -88,6 +95,7 @@ class bienpat(models.Model):
     situBien = models.CharField(max_length=5, default='B')
     valBien = models.IntegerField(default=0)
     estBien = models.CharField(max_length=5, default=1)
+
     
     def __str__(self):
         return (self.codEti + " | " + self.desBien)
@@ -123,20 +131,15 @@ class bienAmbiente(models.Model):
     ambiente = models.ForeignKey(ambiente, on_delete=models.CASCADE)
     bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
 
-class maestro(models.Model):
-    codMaestro = models.CharField(max_length=10)
-    descripMaestro = models.CharField(max_length=50)
-    detalleMaestro = models.CharField(max_length=50)
-
 class incidenciaDsi(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
     problema = models.CharField(max_length=200)
     clasiSolu = models.CharField(max_length=50, null=True)
     solucion = models.CharField(max_length=500, null=True)
-    estado = models.CharField(max_length=10, default='Pendiente')
     userReg = models.CharField(max_length=20)
     fecha_reg = models.DateTimeField(auto_now=True)
     numTicket = models.CharField(max_length=20)
+    estado = models.ForeignKey(maestro, on_delete=models.CASCADE)
 
 
     

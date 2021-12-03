@@ -2,6 +2,11 @@ from django.contrib.auth.models import User, Group
 from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi
 from rest_framework import serializers
 
+class maestroSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = maestro
+        fields = '__all__' 
+
 class PacienteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = paciente
@@ -65,11 +70,6 @@ class proveedorSerializer(serializers.HyperlinkedModelSerializer):
 class provMaqSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = provMaq
-        fields = '__all__' 
-
-class maestroSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = maestro
         fields = '__all__' 
 
 class incidenciaDsiSerializer(serializers.HyperlinkedModelSerializer):

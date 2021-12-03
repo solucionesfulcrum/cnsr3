@@ -39,6 +39,7 @@ router.register(r'personal', viewsAsis.personalViewSet)
 router.register(r'dependencia', viewsAsis.dependenciaViewSet)
 router.register(r'ambiente', viewsAsis.ambienteViewSet)
 router.register(r'incidenciaDsi', viewsAsis.incidenciaDsiViewSet)
+router.register(r'maestro', viewsAsis.maestroViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
