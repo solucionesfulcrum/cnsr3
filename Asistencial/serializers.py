@@ -74,6 +74,7 @@ class provMaqSerializer(serializers.HyperlinkedModelSerializer):
 
 class incidenciaDsiSerializer(serializers.HyperlinkedModelSerializer):
     datosPersonal = personalSerializer(source = "personal", read_only=True)
+    datosEstado = maestroSerializer(source = "estado", read_only=True)
     class Meta:
         model = incidenciaDsi
         fields = '__all__' 

@@ -56,7 +56,7 @@ class provMaqAdmin(admin.ModelAdmin):
     search_fields = ('usobien',)
 
 class incidenciaDsiAdmin(admin.ModelAdmin):
-    list_display = ('problema','clasiSolu','solucion','estado','userReg','fecha_reg','numTicket','estado')
+    list_display = ('problema','clasiSolu','solucion','userReg','fecha_reg','numTicket','estado')
     search_fields = ('id',)
 
 
