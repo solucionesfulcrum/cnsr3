@@ -125,7 +125,7 @@ class bienImag(models.Model):
 
 class bienPersonal(models.Model):
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
-    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
+    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE, unique=True)
 
 class bienAmbiente(models.Model):
     ambiente = models.ForeignKey(ambiente, on_delete=models.CASCADE)
