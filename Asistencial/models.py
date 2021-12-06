@@ -129,7 +129,8 @@ class bienPersonal(models.Model):
 
 class bienAmbiente(models.Model):
     ambiente = models.ForeignKey(ambiente, on_delete=models.CASCADE)
-    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
+    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE, unique=True)
+    personal = models.ForeignKey(personal, on_delete=models.CASCADE)
 
 class incidenciaDsi(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
