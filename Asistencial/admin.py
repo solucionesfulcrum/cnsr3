@@ -42,6 +42,7 @@ class personalAdmin(admin.ModelAdmin):
 class bienPersonalAdmin(admin.ModelAdmin):
     list_display = ('personal','bienpat')
     autocomplete_fields = ('personal','bienpat')
+    search_fields = ('bienpat__codEti','personal__dniPer','personal__apePatPer')
 
 class bienAmbienteAdmin(admin.ModelAdmin):
     list_display = ('ambiente','bienpat','personal')
@@ -57,9 +58,9 @@ class provMaqAdmin(admin.ModelAdmin):
 
 class incidenciaDsiAdmin(admin.ModelAdmin):
     list_display = ('personal','problema','clasiSolu','solucion','userReg','fecha_reg','numTicket','estado')
-    search_fields = ('id',)
-
-
+    search_fields = ('estado__codMaestro',)
+    list_filter = ('estado','clasiSolu')
+    
 admin.site.register(maestro, maestroAdmin)
 
 admin.site.register(paciente, pacienteAdmin)
