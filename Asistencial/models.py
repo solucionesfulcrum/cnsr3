@@ -11,7 +11,7 @@ class maestro(models.Model):
 
 class paciente(models.Model):
     tipo_doc = models.CharField(max_length=40)
-    num_doc = models.CharField(max_length=15)
+    num_doc = models.CharField(max_length=15, unique=True)
     ape_pat = models.CharField(max_length=40)
     ape_mat = models.CharField(max_length=50)    
     nombres = models.CharField(max_length=50)

@@ -23,6 +23,7 @@ class bienpatAdmin(admin.ModelAdmin):
     list_display = ('codEti','propBien','desBien','serBien','modBien','marBien','situBien','valBien','estBien')
     search_fields = ('codEti',)
     inlines = [imagenInline]
+    list_filter = ('propBien','desBien','serBien','modBien','marBien','situBien')
 
 #Datos de inventario
 
