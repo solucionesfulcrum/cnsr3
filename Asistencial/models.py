@@ -47,6 +47,55 @@ class archivo(models.Model):
 
     def __str__(self):
         return self.numHisCli
+# Anemia Clinicas     
+
+class presAnemia(models.Model):
+    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
+    fechaPres = models.DateField()
+    nomNefro = models.CharField(max_length=30)
+    medPres = models.CharField(max_length=30)
+    dosisPres = models.IntegerField()
+    medHiePres = models.CharField(max_length=30)
+    dosisHiePres = models.IntegerField()
+    viaAdmPres = models.CharField(max_length=10)
+    viaAdmHiePres = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.nomNefro
+
+class admiAnemia(models.Model):
+    presAnemia = models.ForeignKey(presAnemia, on_delete=models.CASCADE)
+    fechaAdmi = models.DateField()
+    nomEnfer = models.CharField(max_length=30)
+    medAdmi = models.CharField(max_length=30)
+    dosisAdmi = models.IntegerField()
+    medHieAdmi = models.CharField(max_length=30)
+    dosisHieAdmi = models.IntegerField()
+    viaAdm = models.CharField(max_length=10)
+    viaAdmHierro = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.nomEnfer
+
+class exclusionAnemia(models.Model):
+    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
+    fechaExclu = models.DateField()
+    razonExclu = models.CharField(max_length=30)
+    ObservaExclu = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.razonExclu
+
+class movimientoAnemia(models.Model):
+    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
+    fechaMotivo = models.DateField()
+    razonMotivo = models.CharField(max_length=30)
+    obserMotivo = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.razonMotivo
+
+# Inventario Mantenimiento
 
 class dependencia(models.Model):
     codDep = models.CharField(max_length=20, unique=True)
@@ -55,7 +104,6 @@ class dependencia(models.Model):
     def __str__(self):
         return self.descDep
 
-# Inventario Mantenimiento
 
 class ambiente(models.Model):
     codAmb = models.CharField(max_length=11)

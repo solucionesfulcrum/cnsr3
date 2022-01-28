@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro
-from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer
+from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, presAnemia,admiAnemia, exclusionAnemia, movimientoAnemia, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro
+from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, presAnemiaSerializer, admiAnemiaSerializer, exclusionAnemiaSerializer, movimientoAnemiaSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer
 from rest_framework import permissions, viewsets, filters
 
 # Create your views here.
@@ -40,6 +40,34 @@ class ArchivoViewSet(viewsets.ModelViewSet):
     """
     queryset = archivo.objects.all().order_by('-id')
     serializer_class = ArchivoSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=paciente__id']
+
+class presAnemiaViewSet(viewsets.ModelViewSet):
+    queryset = presAnemia.objects.all().order_by('-id')
+    serializer_class = presAnemiaSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=paciente__id']
+
+class admiAnemiaViewSet(viewsets.ModelViewSet):
+    queryset = admiAnemia.objects.all().order_by('-id')
+    serializer_class = admiAnemiaSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=presAnemia__paciente__id']
+
+class exclusionAnemiaViewSet(viewsets.ModelViewSet):
+    queryset = exclusionAnemia.objects.all().order_by('-id')
+    serializer_class = exclusionAnemiaSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=paciente__id']
+
+class movimientoAnemiaViewSet(viewsets.ModelViewSet):
+    queryset = movimientoAnemia.objects.all().order_by('-id')
+    serializer_class = movimientoAnemiaSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['=paciente__id']

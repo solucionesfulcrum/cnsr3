@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi
+from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi
 # Register your models here.
 class maestroAdmin(admin.ModelAdmin):
     list_display = ('codMaestro','descripMaestro','detalleMaestro')
@@ -19,13 +19,33 @@ class archivoAdmin(admin.ModelAdmin):
 class imagenInline(admin.TabularInline):
     model = bienImag
 
+#Anemia clinicas
+
+class presAnemiaAdmin(admin.ModelAdmin):
+    list_display = ('paciente','fechaPres','nomNefro','medPres','dosisPres','medHiePres','dosisHiePres','viaAdmPres','viaAdmHiePres')
+    search_fields = ('nomNefro',)
+
+class admiAnemiaAdmin(admin.ModelAdmin):
+    list_display = ('presAnemia','fechaAdmi','nomEnfer','medAdmi','dosisAdmi','medHieAdmi','dosisHieAdmi','viaAdm','viaAdmHierro')
+    search_fields = ('nomEnfer',)
+
+class exclusionAnemiaAdmin(admin.ModelAdmin):
+    list_display = ('paciente','fechaExclu','razonExclu','ObservaExclu')
+    search_fields = ('razonExclu',)
+
+class movimientoAnemiaAdmin(admin.ModelAdmin):
+    list_display = ('paciente','fechaMotivo','razonMotivo','obserMotivo')
+    search_fields = ('razonMotivo',)
+
+#Datos de inventario
+
 class bienpatAdmin(admin.ModelAdmin):
     list_display = ('codEti','propBien','desBien','serBien','modBien','marBien','situBien','valBien','estBien')
     search_fields = ('codEti',)
     inlines = [imagenInline]
     list_filter = ('propBien','desBien','serBien','modBien','marBien','situBien')
 
-#Datos de inventario
+
 
 class dependenciaAdmin(admin.ModelAdmin):
     list_display = ('codDep','descDep')
@@ -67,6 +87,11 @@ admin.site.register(maestro, maestroAdmin)
 admin.site.register(paciente, pacienteAdmin)
 admin.site.register(examen, examenAdmin)
 admin.site.register(archivo, archivoAdmin)
+
+admin.site.register(presAnemia, presAnemiaAdmin)
+admin.site.register(admiAnemia, admiAnemiaAdmin)
+admin.site.register(exclusionAnemia, exclusionAnemiaAdmin)
+admin.site.register(movimientoAnemia, movimientoAnemiaAdmin)
 
 admin.site.register(personal, personalAdmin)
 admin.site.register(bienpat, bienpatAdmin)

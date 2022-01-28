@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi
+from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi
 from rest_framework import serializers
 
 class maestroSerializer(serializers.HyperlinkedModelSerializer):
@@ -34,6 +34,34 @@ class bienImagSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = bienImag
         fields = '__all__'
+        
+#Clinicas Anemia
+
+class presAnemiaSerializer(serializers.HyperlinkedModelSerializer):
+    datosPaciente = PacienteSerializer(source="paciente", read_only=True)    
+    class Meta:
+        model = presAnemia
+        fields = '__all__'
+
+class admiAnemiaSerializer(serializers.HyperlinkedModelSerializer):
+    datosPres = presAnemiaSerializer(source="presAnemia", read_only=True)    
+    class Meta:
+        model = admiAnemia
+        fields = '__all__'
+
+class exclusionAnemiaSerializer(serializers.HyperlinkedModelSerializer):
+    datosPaciente = PacienteSerializer(source="paciente", read_only=True)   
+    class Meta:
+        model = exclusionAnemia
+        fields = '__all__'
+
+class movimientoAnemiaSerializer(serializers.HyperlinkedModelSerializer):
+    datosPaciente = PacienteSerializer(source="paciente", read_only=True)   
+    class Meta:
+        model = movimientoAnemia
+        fields = '__all__'
+
+#Inventario
 
 class dependenciaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -53,6 +81,8 @@ class personalSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'     
 
 class bienPersonalSerializer(serializers.HyperlinkedModelSerializer):
+    datos_bienpat = bienpatSerializer(source = "bienpat", read_only=True)
+    datosPersonal = personalSerializer(source = "personal", read_only=True)
     class Meta:
         model = bienPersonal
         fields = '__all__'    

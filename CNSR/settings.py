@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'CNSR.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bdCnsrEssalud',
+        'NAME': 'bdCnsrGeneral',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
+        'PASSWORD': '123456',
+        'HOST': '10.0.54.201',
         'PORT': '5432',
     }
 }

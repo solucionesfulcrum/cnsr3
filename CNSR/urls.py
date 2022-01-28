@@ -41,6 +41,11 @@ router.register(r'ambiente', viewsAsis.ambienteViewSet)
 router.register(r'incidenciaDsi', viewsAsis.incidenciaDsiViewSet)
 router.register(r'maestro', viewsAsis.maestroViewSet)
 router.register(r'bienpat', viewsAsis.bienpatViewSet)
+router.register(r'bienPersonal', viewsAsis.bienPersonalViewSet)
+router.register(r'presAnemia', viewsAsis.presAnemiaViewSet)
+router.register(r'adminAnemia', viewsAsis.admiAnemiaViewSet)
+router.register(r'exclusionAnemia', viewsAsis.exclusionAnemiaViewSet)
+router.register(r'movimientoAnemia', viewsAsis.movimientoAnemiaViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
