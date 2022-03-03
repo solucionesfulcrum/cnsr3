@@ -180,6 +180,16 @@ class bienAmbiente(models.Model):
     bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE, unique=True)
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
 
+class bienHadware(models.Model):
+    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
+    procesador = models.CharField(max_length=20)
+    numeroIp = models.CharField(max_length=20)
+    numeroMac = models.CharField(max_length=20)
+    memoriaRam = models.CharField(max_length=20)
+    capAlmacenamiento = models.CharField(max_length=20)
+    uso = models.CharField(max_length=20)
+    condicion = models.CharField(max_length=20)
+
 class incidenciaDsi(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
     problema = models.CharField(max_length=200)

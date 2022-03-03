@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, presAnemia,admiAnemia, exclusionAnemia, movimientoAnemia, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro
-from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, presAnemiaSerializer, admiAnemiaSerializer, exclusionAnemiaSerializer, movimientoAnemiaSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer
+from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, presAnemia,admiAnemia, exclusionAnemia, movimientoAnemia, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro, bienHadware
+from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, presAnemiaSerializer, admiAnemiaSerializer, exclusionAnemiaSerializer, movimientoAnemiaSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer, bienHadwareSerializer
 from rest_framework import permissions, viewsets, filters
 
 # Create your views here.
@@ -28,7 +28,7 @@ class ExamenViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
-    queryset = examen.objects.all()
+    queryset = examen.objects.all().order_by('-id')
     serializer_class = ExamenSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
@@ -141,6 +141,16 @@ class bienAmbienteViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['=bienpat__id']
+
+class bienHadwareViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = bienHadware.objects.all()
+    serializer_class = bienHadwareSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=id']
 
 class proveedorViewSet(viewsets.ModelViewSet):
     """

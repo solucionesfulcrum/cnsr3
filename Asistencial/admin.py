@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi
+from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware
 # Register your models here.
 class maestroAdmin(admin.ModelAdmin):
     list_display = ('codMaestro','descripMaestro','detalleMaestro')
@@ -45,8 +45,6 @@ class bienpatAdmin(admin.ModelAdmin):
     inlines = [imagenInline]
     list_filter = ('propBien','desBien','serBien','modBien','marBien','situBien')
 
-
-
 class dependenciaAdmin(admin.ModelAdmin):
     list_display = ('codDep','descDep')
     search_fields = ('codDep',)
@@ -69,6 +67,10 @@ class bienAmbienteAdmin(admin.ModelAdmin):
     list_display = ('ambiente','bienpat','personal')
     autocomplete_fields = ('ambiente','bienpat')
 
+class bienHadwareAdmin(admin.ModelAdmin):
+    list_display = ('bienpat','procesador','numeroIp','numeroMac','memoriaRam','capAlmacenamiento','uso','condicion')
+    autocomplete_fields = ('bienpat',)
+
 class proveedorAdmin(admin.ModelAdmin):
     list_display = ('rucProveedor','nombreProveedor','telefProveedor','direcProveedor','estadoProveedor')
     search_fields = ('rucProveedor',)
@@ -81,7 +83,8 @@ class incidenciaDsiAdmin(admin.ModelAdmin):
     list_display = ('personal','problema','clasiSolu','solucion','userReg','fecha_reg','numTicket','estado')
     search_fields = ('estado__codMaestro',)
     list_filter = ('estado','clasiSolu')
-    
+
+
 admin.site.register(maestro, maestroAdmin)
 
 admin.site.register(paciente, pacienteAdmin)
@@ -99,6 +102,7 @@ admin.site.register(dependencia, dependenciaAdmin)
 admin.site.register(ambiente, ambienteAdmin)
 admin.site.register(bienPersonal, bienPersonalAdmin)
 admin.site.register(bienAmbiente, bienAmbienteAdmin)
+admin.site.register(bienHadware, bienHadwareAdmin)
 
 admin.site.register(proveedor, proveedorAdmin)
 admin.site.register(provMaq, provMaqAdmin)
