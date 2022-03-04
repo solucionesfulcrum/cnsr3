@@ -190,6 +190,12 @@ class bienHadware(models.Model):
     uso = models.CharField(max_length=20)
     condicion = models.CharField(max_length=20)
 
+class bienSoftware(models.Model):
+    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
+    sistemaOperativo = models.CharField(max_length=20)
+    ofimatica = models.CharField(max_length=20)
+    antivirus = models.CharField(max_length=20)
+
 class incidenciaDsi(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
     problema = models.CharField(max_length=200)

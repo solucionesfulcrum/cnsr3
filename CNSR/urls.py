@@ -46,7 +46,8 @@ router.register(r'presAnemia', viewsAsis.presAnemiaViewSet)
 router.register(r'adminAnemia', viewsAsis.admiAnemiaViewSet)
 router.register(r'exclusionAnemia', viewsAsis.exclusionAnemiaViewSet)
 router.register(r'movimientoAnemia', viewsAsis.movimientoAnemiaViewSet)
-router.register(r'bienHadware', viewsAsis.movimientoAnemiaViewSet)
+router.register(r'bienHadware', viewsAsis.bienHadwareViewSet)
+router.register(r'bienSoftware', viewsAsis.bienSoftwareViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
