@@ -196,6 +196,10 @@ class bienSoftware(models.Model):
     ofimatica = models.CharField(max_length=20)
     antivirus = models.CharField(max_length=20)
 
+class bienDetalleMonitor(models.Model):
+    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
+    pulgadas = models.CharField(max_length=20)
+
 class incidenciaDsi(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
     problema = models.CharField(max_length=200)

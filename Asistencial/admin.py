@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware
+from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor
 # Register your models here.
 class maestroAdmin(admin.ModelAdmin):
     list_display = ('codMaestro','descripMaestro','detalleMaestro')
@@ -75,6 +75,10 @@ class bienSoftwareAdmin(admin.ModelAdmin):
     list_display = ('bienpat','sistemaOperativo','ofimatica','antivirus')
     autocomplete_fields = ('bienpat',)
 
+class bienDetalleMonitorAdmin(admin.ModelAdmin):
+    list_display = ('bienpat','pulgadas')
+    autocomplete_fields = ('bienpat',)
+
 class proveedorAdmin(admin.ModelAdmin):
     list_display = ('rucProveedor','nombreProveedor','telefProveedor','direcProveedor','estadoProveedor')
     search_fields = ('rucProveedor',)
@@ -108,6 +112,7 @@ admin.site.register(bienPersonal, bienPersonalAdmin)
 admin.site.register(bienAmbiente, bienAmbienteAdmin)
 admin.site.register(bienHadware, bienHadwareAdmin)
 admin.site.register(bienSoftware, bienSoftwareAdmin)
+admin.site.register(bienDetalleMonitor, bienDetalleMonitorAdmin)
 
 admin.site.register(proveedor, proveedorAdmin)
 admin.site.register(provMaq, provMaqAdmin)
