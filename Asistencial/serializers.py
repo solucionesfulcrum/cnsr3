@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor
+from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion
 from rest_framework import serializers
 
 class maestroSerializer(serializers.HyperlinkedModelSerializer):
@@ -59,6 +59,12 @@ class movimientoAnemiaSerializer(serializers.HyperlinkedModelSerializer):
     datosPaciente = PacienteSerializer(source="paciente", read_only=True)   
     class Meta:
         model = movimientoAnemia
+        fields = '__all__'
+
+class nutricionSerializer(serializers.HyperlinkedModelSerializer):
+    datosPaciente = PacienteSerializer(source="paciente", read_only=True)   
+    class Meta:
+        model = nutricion
         fields = '__all__'
 
 #Inventario

@@ -49,6 +49,7 @@ router.register(r'movimientoAnemia', viewsAsis.movimientoAnemiaViewSet)
 router.register(r'bienHadware', viewsAsis.bienHadwareViewSet)
 router.register(r'bienSoftware', viewsAsis.bienSoftwareViewSet)
 router.register(r'bienDetalleMonitor', viewsAsis.bienDetalleMonitorViewSet)
+router.register(r'nutricion', viewsAsis.nutricionViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

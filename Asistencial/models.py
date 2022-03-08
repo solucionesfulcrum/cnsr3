@@ -95,6 +95,26 @@ class movimientoAnemia(models.Model):
     def __str__(self):
         return self.razonMotivo
 
+class nutricion(models.Model):
+    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
+    diaTurno = models.CharField(max_length=30)
+    fechaIngreso = models.DateField()
+    fechaEvaluacion = models.DateField()
+    peso = models.CharField(max_length=30)
+    talla = models.CharField(max_length=30)
+    imc = models.CharField(max_length=30)
+    porcentajeCMB = models.CharField(max_length=30)
+    porcentajeEPT = models.CharField(max_length=30)
+    albSerica = models.CharField(max_length=30)
+    ValGlobalSub = models.CharField(max_length=30)
+    ingestaCalorica = models.CharField(max_length=60)
+    ingestaProteica = models.CharField(max_length=60)
+    diagNutricional = models.CharField(max_length=60)
+    interveNutricional = models.CharField(max_length=60)
+
+    def __str__(self):
+        return self.fechaIngreso
+
 # Inventario Mantenimiento
 
 class dependencia(models.Model):

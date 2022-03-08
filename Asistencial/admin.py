@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor
+from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion
 # Register your models here.
 class maestroAdmin(admin.ModelAdmin):
     list_display = ('codMaestro','descripMaestro','detalleMaestro')
@@ -36,6 +36,10 @@ class exclusionAnemiaAdmin(admin.ModelAdmin):
 class movimientoAnemiaAdmin(admin.ModelAdmin):
     list_display = ('paciente','fechaMotivo','razonMotivo','obserMotivo')
     search_fields = ('razonMotivo',)
+
+class nutricionAdmin(admin.ModelAdmin):
+    list_display = ('paciente','diaTurno','fechaIngreso','fechaEvaluacion','peso','talla','imc','porcentajeCMB','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','diagNutricional','interveNutricional')
+    search_fields = ('diaTurno',)
 
 #Datos de inventario
 
@@ -103,6 +107,7 @@ admin.site.register(presAnemia, presAnemiaAdmin)
 admin.site.register(admiAnemia, admiAnemiaAdmin)
 admin.site.register(exclusionAnemia, exclusionAnemiaAdmin)
 admin.site.register(movimientoAnemia, movimientoAnemiaAdmin)
+admin.site.register(nutricion, nutricionAdmin)
 
 admin.site.register(personal, personalAdmin)
 admin.site.register(bienpat, bienpatAdmin)
