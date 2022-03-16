@@ -238,12 +238,12 @@ class personalVpn(models.Model):
     clave = models.CharField(max_length=30)
     personalAutoriza = models.CharField(max_length=40)
     fechaHabilita = models.DateField(null=True, blank=True)
-    fechaInstalacion = models.DateField()
-    observacion = models.CharField(max_length=200)
+    fechaInstalacion = models.DateField(null=True, blank=True)
+    observacion = models.CharField(max_length=200,null=True, blank=True)
     fecha_reg = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.ip
+        return self.usuario
     
 class personalCertificado(models.Model):
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
