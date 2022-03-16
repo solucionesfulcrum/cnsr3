@@ -255,4 +255,4 @@ class personalCertificado(models.Model):
     fecha_reg = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.fechaSolicita
+        return self.tipoCertificado
