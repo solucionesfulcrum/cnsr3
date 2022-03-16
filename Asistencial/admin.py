@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion
+from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado
 # Register your models here.
 class maestroAdmin(admin.ModelAdmin):
     list_display = ('codMaestro','descripMaestro','detalleMaestro')
@@ -38,8 +38,8 @@ class movimientoAnemiaAdmin(admin.ModelAdmin):
     search_fields = ('razonMotivo',)
 
 class nutricionAdmin(admin.ModelAdmin):
-    list_display = ('paciente','diaTurno','fechaIngreso','fechaEvaluacion','peso','talla','imc','porcentajeCMB','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','diagNutricional','interveNutricional')
-    search_fields = ('diaTurno',)
+    list_display = ('paciente','turno','frecuencia','fechaIngreso','fechaEvaluacion','peso','talla','imc','porcentajeCMB','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','diagNutricional','interveNutricional')
+    search_fields = ('frecuencia',)
 
 #Datos de inventario
 
@@ -96,6 +96,15 @@ class incidenciaDsiAdmin(admin.ModelAdmin):
     search_fields = ('estado__codMaestro',)
     list_filter = ('estado','clasiSolu')
 
+class personalVpnAdmin(admin.ModelAdmin):
+    list_display = ('personal','ip','usuario','clave','personalAutoriza','fechaHabilita','fechaInstalacion','observacion','fecha_reg')
+    autocomplete_fields = ('personal',)
+    search_fields = ('ip',)
+
+class personalCertificadoAdmin(admin.ModelAdmin):
+    list_display = ('personal','fechaSolicita','tipoCertificado','fechaInstalacion','perosnalInstala','observacion','fecha_reg')
+    autocomplete_fields = ('personal',)
+    search_fields = ('fechaSolicita',)
 
 admin.site.register(maestro, maestroAdmin)
 
@@ -124,3 +133,5 @@ admin.site.register(provMaq, provMaqAdmin)
 
 
 admin.site.register(incidenciaDsi, incidenciaDsiAdmin)
+admin.site.register(personalVpn, personalVpnAdmin)
+admin.site.register(personalCertificado, personalCertificadoAdmin)

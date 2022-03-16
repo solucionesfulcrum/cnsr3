@@ -50,6 +50,8 @@ router.register(r'bienHadware', viewsAsis.bienHadwareViewSet)
 router.register(r'bienSoftware', viewsAsis.bienSoftwareViewSet)
 router.register(r'bienDetalleMonitor', viewsAsis.bienDetalleMonitorViewSet)
 router.register(r'nutricion', viewsAsis.nutricionViewSet)
+router.register(r'personalVpn', viewsAsis.personalVpnViewSet)
+router.register(r'personalCertificado', viewsAsis.personalCertificadoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

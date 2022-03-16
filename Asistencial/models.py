@@ -97,7 +97,8 @@ class movimientoAnemia(models.Model):
 
 class nutricion(models.Model):
     paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
-    diaTurno = models.CharField(max_length=30)
+    turno = models.CharField(max_length=30)
+    frecuencia = models.CharField(max_length=30)
     fechaIngreso = models.DateField()
     fechaEvaluacion = models.DateField()
     peso = models.CharField(max_length=30)
@@ -113,7 +114,7 @@ class nutricion(models.Model):
     interveNutricional = models.CharField(max_length=60)
 
     def __str__(self):
-        return self.fechaIngreso
+        return self.frecuencia
 
 # Inventario Mantenimiento
 
@@ -230,6 +231,28 @@ class incidenciaDsi(models.Model):
     numTicket = models.CharField(max_length=20)
     estado = models.ForeignKey(maestro, on_delete=models.CASCADE)
 
+class personalVpn(models.Model): 
+    personal = models.ForeignKey(personal, on_delete=models.CASCADE)
+    ip = models.CharField(max_length=30, null=True, blank=True)
+    usuario = models.CharField(max_length=30)
+    clave = models.CharField(max_length=30)
+    personalAutoriza = models.CharField(max_length=40)
+    fechaHabilita = models.DateField(null=True, blank=True)
+    fechaInstalacion = models.DateField()
+    observacion = models.CharField(max_length=200)
+    fecha_reg = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.ip
     
-    
+class personalCertificado(models.Model):
+    personal = models.ForeignKey(personal, on_delete=models.CASCADE)
+    fechaSolicita = models.DateField()
+    tipoCertificado = models.CharField(max_length=30)
+    fechaInstalacion = models.DateField(null=True, blank=True)
+    perosnalInstala =  models.CharField(max_length=40, null=True, blank=True)
+    observacion = models.CharField(max_length=200, null=True, blank=True)
+    fecha_reg = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.fechaSolicita
