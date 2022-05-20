@@ -1,5 +1,26 @@
 from django.db import models
 
+# Ubicacion usuario
+
+class cas(models.Model):
+    codCas = models.CharField(max_length=15, unique=True)
+    descripCas = models.CharField(max_length=50)
+
+    def __str__(self):
+        return (self.descripCas)
+
+# Seguridad
+class usuario(models.Model):
+    num_doc = models.CharField(max_length=15, unique=True)
+    nombre = models.CharField(max_length=50)
+    cas = models.ForeignKey(cas, on_delete=models.CASCADE)
+    usuario = models.CharField(max_length=15, unique=True)
+    clave = models.CharField(max_length=20)
+    perfil = models.CharField(max_length=50)
+
+    def __str__(self):
+        return (self.usuario)
+
 # Create your models here.
 class maestro(models.Model):
     codMaestro = models.CharField(max_length=10)
@@ -47,7 +68,7 @@ class archivo(models.Model):
 
     def __str__(self):
         return self.numHisCli
-# Anemia Clinicas     
+# Tabla Clinicas     
 
 class presAnemia(models.Model):
     paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
@@ -99,22 +120,52 @@ class nutricion(models.Model):
     paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
     turno = models.CharField(max_length=30)
     frecuencia = models.CharField(max_length=30)
-    fechaIngreso = models.DateField()
-    fechaEvaluacion = models.DateField()
+    fechaIngreso = models.DateField(null=True)
+    fechaEvaluacion = models.DateField(null=True)
     peso = models.CharField(max_length=30)
     talla = models.CharField(max_length=30)
     imc = models.CharField(max_length=30)
     porcentajeCMB = models.CharField(max_length=30)
-    porcentajeEPT = models.CharField(max_length=30)
+    porcentajeEPT = models.CharField(max_length=30, null=True)
     albSerica = models.CharField(max_length=30)
-    ValGlobalSub = models.CharField(max_length=30)
+    ValGlobalSub = models.CharField(max_length=30, null=True, blank=True)
     ingestaCalorica = models.CharField(max_length=60)
     ingestaProteica = models.CharField(max_length=60)
     diagNutricional = models.CharField(max_length=60)
     interveNutricional = models.CharField(max_length=60)
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    fechaReg = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.frecuencia
+
+# Tabla Hospitales (VGS)     
+
+class valGlobalSub(models.Model):
+    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
+    fechaEval = models.DateField()
+    ganPerPeso = models.CharField(max_length=15) # Ganancia o perdida de Peso  
+    camPesoCorp = models.CharField(max_length=15) # Cambio de peso corporal 
+    # Cambios en la dieta, en relación con lo normal 
+    duraDieta = models.CharField(max_length=15) # Duración 
+    resultDieta = models.CharField(max_length=15) # Resultado
+    tipoDieta = models.CharField(max_length=40) # Tipo de Dieta
+    sintoGastro = models.CharField(max_length=15) # Sintomas gastrointestinales
+    disfuncion = models.CharField(max_length=15) # Capacidad funcional 
+    cambioCapFun = models.CharField(max_length=15) # Cambio capacidad Funcional
+    # Examen Fisico
+    grasaSubcu = models.CharField(max_length=15) # Pérdida de grasa subcutánea 
+    atrofiaMusc = models.CharField(max_length=15) # Atrofia muscular 
+    EdemaTobi = models.CharField(max_length=15) # Edema de tobillos
+    edemaSacro = models.CharField(max_length=15) # Edema sacro
+    ascitis = models.CharField(max_length=15) # Ascitis
+    # Diagnostico de Valoracion Global Subjestiva
+    resultadoVGS = models.CharField(max_length=25) # Ascitis
+    fechaReg = models.DateField()
+    userReg = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.resultadoVGS
 
 # Inventario Mantenimiento
 
@@ -194,11 +245,11 @@ class bienImag(models.Model):
 
 class bienPersonal(models.Model):
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
-    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE, unique=True)
+    bienpat = models.OneToOneField(bienpat, on_delete=models.CASCADE, unique=True)
 
 class bienAmbiente(models.Model):
     ambiente = models.ForeignKey(ambiente, on_delete=models.CASCADE)
-    bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE, unique=True)
+    bienpat = models.OneToOneField(bienpat, on_delete=models.CASCADE, unique=True)
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
 
 class bienHadware(models.Model):
@@ -231,7 +282,7 @@ class incidenciaDsi(models.Model):
     numTicket = models.CharField(max_length=20)
     estado = models.ForeignKey(maestro, on_delete=models.CASCADE)
 
-class personalVpn(models.Model): 
+class personalVpnAct(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
     ip = models.CharField(max_length=30, null=True, blank=True)
     usuario = models.CharField(max_length=30)
@@ -241,6 +292,7 @@ class personalVpn(models.Model):
     fechaInstalacion = models.DateField(null=True, blank=True)
     observacion = models.CharField(max_length=200,null=True, blank=True)
     fecha_reg = models.DateTimeField(auto_now=True)
+    dato = models.CharField(max_length=30)
 
     def __str__(self):
         return self.usuario

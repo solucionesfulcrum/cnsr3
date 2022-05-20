@@ -1,6 +1,17 @@
 from django.contrib.auth.models import User, Group
-from Asistencial.models import paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado
+from Asistencial.models import cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpnAct, personalCertificado, valGlobalSub
 from rest_framework import serializers
+
+class casSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = cas
+        fields = '__all__' 
+
+class usuarioSerializer(serializers.HyperlinkedModelSerializer):
+    datosCas = casSerializer(source = "cas", read_only=True)
+    class Meta:
+        model = usuario
+        fields = '__all__' 
 
 class maestroSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -62,11 +73,19 @@ class movimientoAnemiaSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class nutricionSerializer(serializers.HyperlinkedModelSerializer):
-    datosPaciente = PacienteSerializer(source="paciente", read_only=True)   
+    datosPaciente = PacienteSerializer(source="paciente", read_only=True) 
+    datosUsuario = usuarioSerializer(source="usuario", read_only=True)   
     class Meta:
         model = nutricion
         fields = '__all__'
 
+# Hospitales Vgs
+class valGlobalSubSerializer(serializers.HyperlinkedModelSerializer):
+    datosPaciente = PacienteSerializer(source="paciente", read_only=True)   
+    class Meta:
+        model = valGlobalSub
+        fields = '__all__'
+        
 #Inventario
 
 class dependenciaSerializer(serializers.HyperlinkedModelSerializer):
@@ -130,10 +149,10 @@ class incidenciaDsiSerializer(serializers.HyperlinkedModelSerializer):
         model = incidenciaDsi
         fields = '__all__' 
 
-class personalVpnSerializer(serializers.HyperlinkedModelSerializer):
+class personalVpnActSerializer(serializers.HyperlinkedModelSerializer):
     datosPersonal = personalSerializer(source = "personal", read_only=True)
     class Meta:
-        model = personalVpn
+        model = personalVpnAct
         fields = '__all__' 
 
 class personalCertificadoSerializer(serializers.HyperlinkedModelSerializer):

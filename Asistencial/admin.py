@@ -1,5 +1,16 @@
 from django.contrib import admin
-from Asistencial.models import paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado
+from Asistencial.models import cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpnAct, personalCertificado, valGlobalSub
+
+# Ubicacion usuario
+class casAdmin(admin.ModelAdmin):
+    list_display = ('codCas','descripCas')
+    search_fields = ('codCas',)
+
+# Seguridad
+class usuarioAdmin(admin.ModelAdmin):
+    list_display = ('num_doc','nombre','cas','usuario','clave','perfil')
+    search_fields = ('usuario',)
+
 # Register your models here.
 class maestroAdmin(admin.ModelAdmin):
     list_display = ('codMaestro','descripMaestro','detalleMaestro')
@@ -38,8 +49,14 @@ class movimientoAnemiaAdmin(admin.ModelAdmin):
     search_fields = ('razonMotivo',)
 
 class nutricionAdmin(admin.ModelAdmin):
-    list_display = ('paciente','turno','frecuencia','fechaIngreso','fechaEvaluacion','peso','talla','imc','porcentajeCMB','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','diagNutricional','interveNutricional')
+    list_display = ('paciente','turno','frecuencia','fechaIngreso','fechaEvaluacion','peso','talla','imc','porcentajeCMB','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','diagNutricional','interveNutricional','usuario','fechaReg')
     search_fields = ('frecuencia',)
+
+#Datos de Hospitales VGS
+
+class valGlobalSubAdmin(admin.ModelAdmin):
+    list_display = ('paciente','fechaEval','ganPerPeso','camPesoCorp','duraDieta','resultDieta','tipoDieta','sintoGastro','disfuncion','cambioCapFun','grasaSubcu','atrofiaMusc','EdemaTobi','edemaSacro','ascitis','resultadoVGS','fechaReg','userReg')
+    search_fields = ('resultadoVGS',)
 
 #Datos de inventario
 
@@ -96,15 +113,19 @@ class incidenciaDsiAdmin(admin.ModelAdmin):
     search_fields = ('estado__codMaestro',)
     list_filter = ('estado','clasiSolu')
 
-class personalVpnAdmin(admin.ModelAdmin):
-    list_display = ('personal','ip','usuario','clave','personalAutoriza','fechaHabilita','fechaInstalacion','observacion','fecha_reg')
+class personalVpnActAdmin(admin.ModelAdmin):
+    list_display = ('personal','ip','usuario','clave','personalAutoriza','fechaHabilita','fechaInstalacion','observacion','fecha_reg','dato')
     autocomplete_fields = ('personal',)
-    search_fields = ('ip',)
+    search_fields = ('usuario',)
 
 class personalCertificadoAdmin(admin.ModelAdmin):
     list_display = ('personal','fechaSolicita','tipoCertificado','fechaInstalacion','perosnalInstala','observacion','fecha_reg')
     autocomplete_fields = ('personal',)
-    search_fields = ('fechaSolicita',)
+    search_fields = ('tipoCertificado',)
+
+admin.site.register(cas, casAdmin)
+
+admin.site.register(usuario, usuarioAdmin)
 
 admin.site.register(maestro, maestroAdmin)
 
@@ -117,6 +138,7 @@ admin.site.register(admiAnemia, admiAnemiaAdmin)
 admin.site.register(exclusionAnemia, exclusionAnemiaAdmin)
 admin.site.register(movimientoAnemia, movimientoAnemiaAdmin)
 admin.site.register(nutricion, nutricionAdmin)
+admin.site.register(valGlobalSub, valGlobalSubAdmin)
 
 admin.site.register(personal, personalAdmin)
 admin.site.register(bienpat, bienpatAdmin)
@@ -133,5 +155,5 @@ admin.site.register(provMaq, provMaqAdmin)
 
 
 admin.site.register(incidenciaDsi, incidenciaDsiAdmin)
-admin.site.register(personalVpn, personalVpnAdmin)
+admin.site.register(personalVpnAct, personalVpnActAdmin)
 admin.site.register(personalCertificado, personalCertificadoAdmin)

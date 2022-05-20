@@ -1,7 +1,28 @@
 from django.shortcuts import render
-from Asistencial.models import paciente, examen, archivo, bienAmbiente, bienImag, presAnemia,admiAnemia, exclusionAnemia, movimientoAnemia, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado
-from Asistencial.serializers import PacienteSerializer, ExamenSerializer, ArchivoSerializer, presAnemiaSerializer, admiAnemiaSerializer, exclusionAnemiaSerializer, movimientoAnemiaSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer, bienHadwareSerializer, bienSoftwareSerializer, bienDetalleMonitorSerializer, nutricionSerializer, personalVpnSerializer, personalCertificadoSerializer
+from Asistencial.models import cas, usuario, paciente, examen, archivo, bienAmbiente, bienImag, presAnemia,admiAnemia, exclusionAnemia, movimientoAnemia, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpnAct, personalCertificado, valGlobalSub
+from Asistencial.serializers import casSerializer ,usuarioSerializer, PacienteSerializer, ExamenSerializer, ArchivoSerializer, presAnemiaSerializer, admiAnemiaSerializer, exclusionAnemiaSerializer, movimientoAnemiaSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer, bienHadwareSerializer, bienSoftwareSerializer, bienDetalleMonitorSerializer, nutricionSerializer, personalVpnActSerializer, personalCertificadoSerializer, valGlobalSubSerializer
 from rest_framework import permissions, viewsets, filters
+
+class casViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = cas.objects.all()
+    serializer_class = casSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=codCas']
+
+
+class usuarioViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = usuario.objects.all()
+    serializer_class = usuarioSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=usuario']
 
 # Create your views here.
 class maestroViewSet(viewsets.ModelViewSet):
@@ -75,6 +96,13 @@ class movimientoAnemiaViewSet(viewsets.ModelViewSet):
 class nutricionViewSet(viewsets.ModelViewSet):
     queryset = nutricion.objects.all().order_by('-id')
     serializer_class = nutricionSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=paciente__id']
+
+class valGlobalSubViewSet(viewsets.ModelViewSet):
+    queryset = valGlobalSub.objects.all().order_by('-id')
+    serializer_class = valGlobalSubSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['=paciente__id']
@@ -210,12 +238,12 @@ class incidenciaDsiViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter]
     search_fields = ['=personal__dniPer']
 
-class personalVpnViewSet(viewsets.ModelViewSet):
+class personalVpnActViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
-    queryset = personalVpn.objects.all().order_by('-id')
-    serializer_class = personalVpnSerializer
+    queryset = personalVpnAct.objects.all().order_by('-id')
+    serializer_class = personalVpnActSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['=personal__dniPer']
