@@ -19,6 +19,7 @@ class maestroSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__' 
 
 class PacienteSerializer(serializers.HyperlinkedModelSerializer):
+    datosCasOri = casSerializer(source = "cas", read_only=True)
     class Meta:
         model = paciente
         fields = '__all__'

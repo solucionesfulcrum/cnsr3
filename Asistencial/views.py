@@ -11,7 +11,7 @@ class casViewSet(viewsets.ModelViewSet):
     serializer_class = casSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=codCas']
+    search_fields = ['=tipoCas']
 
 
 class usuarioViewSet(viewsets.ModelViewSet):
@@ -98,7 +98,7 @@ class nutricionViewSet(viewsets.ModelViewSet):
     serializer_class = nutricionSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=paciente__id']
+    search_fields = ['=paciente__id','=usuario__cas__codCas']
 
 class valGlobalSubViewSet(viewsets.ModelViewSet):
     queryset = valGlobalSub.objects.all().order_by('-id')

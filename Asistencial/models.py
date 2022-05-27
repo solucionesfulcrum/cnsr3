@@ -4,7 +4,8 @@ from django.db import models
 
 class cas(models.Model):
     codCas = models.CharField(max_length=15, unique=True)
-    descripCas = models.CharField(max_length=50)
+    descripCas = models.CharField(max_length=100)
+    tipoCas = models.CharField(max_length=10)
 
     def __str__(self):
         return (self.descripCas)
@@ -38,6 +39,7 @@ class paciente(models.Model):
     nombres = models.CharField(max_length=50)
     fecha_nac = models.DateField(null=True, blank=True)
     sexo = models.CharField(max_length=10, null=True)
+    casOri = models.ForeignKey(cas, on_delete=models.CASCADE)
     estado = models.CharField(max_length=5, default=1)
 
     def __str__(self):
