@@ -22,7 +22,7 @@ class usuarioViewSet(viewsets.ModelViewSet):
     serializer_class = usuarioSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=usuario']
+    search_fields = ['=usuario','=id']
 
 # Create your views here.
 class maestroViewSet(viewsets.ModelViewSet):
