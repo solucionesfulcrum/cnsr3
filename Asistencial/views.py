@@ -98,7 +98,7 @@ class nutricionViewSet(viewsets.ModelViewSet):
     serializer_class = nutricionSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=paciente__id','=usuario__cas__codCas']
+    search_fields = ['=paciente__id','=usuario__cas__codCas','=pacNuevo']
 
 class valGlobalSubViewSet(viewsets.ModelViewSet):
     queryset = valGlobalSub.objects.all().order_by('-id')

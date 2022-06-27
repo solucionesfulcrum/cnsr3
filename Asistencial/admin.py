@@ -49,7 +49,7 @@ class movimientoAnemiaAdmin(admin.ModelAdmin):
     search_fields = ('razonMotivo',)
 
 class nutricionAdmin(admin.ModelAdmin):
-    list_display = ('paciente','turno','frecuencia','fechaIngreso','fechaEvaluacion','peso','talla','imc','porcentajeCMB','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','diagNutricional','interveNutricional','usuario','fechaReg')
+    list_display = ('paciente','turno','frecuencia','fechaIngreso','fechaEvaluacion','peso','talla','imc','porcentajeCMB','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','diagNutricional','interveNutricional','usuario','fechaReg','pacNuevo')
     search_fields = ('frecuencia',)
 
 #Datos de Hospitales VGS

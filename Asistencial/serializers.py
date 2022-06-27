@@ -2,6 +2,9 @@ from django.contrib.auth.models import User, Group
 from Asistencial.models import cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpnAct, personalCertificado, valGlobalSub
 from rest_framework import serializers
 
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
 class casSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = cas
@@ -20,6 +23,12 @@ class maestroSerializer(serializers.HyperlinkedModelSerializer):
 
 class PacienteSerializer(serializers.HyperlinkedModelSerializer):
     datosCasOri = casSerializer(source = "cas", read_only=True)
+    edad = serializers.SerializerMethodField('obtain_edad') 
+
+    def obtain_edad(self, mascota):
+        age = relativedelta(datetime.now(), mascota.fecha_nac)
+        return age.years,age.months,age.days
+
     class Meta:
         model = paciente
         fields = '__all__'

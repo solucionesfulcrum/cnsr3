@@ -122,13 +122,13 @@ class nutricion(models.Model):
     paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
     turno = models.CharField(max_length=30)
     frecuencia = models.CharField(max_length=30)
-    fechaIngreso = models.DateField(null=True)
-    fechaEvaluacion = models.DateField(null=True)
+    fechaIngreso = models.DateField(null=True, blank=True)
+    fechaEvaluacion = models.DateField(null=True, blank=True)
     peso = models.CharField(max_length=30)
     talla = models.CharField(max_length=30)
     imc = models.CharField(max_length=30)
     porcentajeCMB = models.CharField(max_length=30)
-    porcentajeEPT = models.CharField(max_length=30, null=True)
+    porcentajeEPT = models.CharField(max_length=30, null=True, blank=True)
     albSerica = models.CharField(max_length=30)
     ValGlobalSub = models.CharField(max_length=30, null=True, blank=True)
     ingestaCalorica = models.CharField(max_length=60)
@@ -137,6 +137,7 @@ class nutricion(models.Model):
     interveNutricional = models.CharField(max_length=60)
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
     fechaReg = models.DateTimeField(auto_now_add=True)
+    pacNuevo = models.BooleanField()
 
     def __str__(self):
         return self.frecuencia
