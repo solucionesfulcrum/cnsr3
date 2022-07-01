@@ -39,7 +39,7 @@ class paciente(models.Model):
     nombres = models.CharField(max_length=50)
     fecha_nac = models.DateField(null=True, blank=True)
     sexo = models.CharField(max_length=10, null=True)
-    casOri = models.ForeignKey(cas, on_delete=models.CASCADE)
+    cas = models.ForeignKey(cas, on_delete=models.CASCADE)
     estado = models.CharField(max_length=5, default=1)
 
     def __str__(self):

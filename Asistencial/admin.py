@@ -17,7 +17,7 @@ class maestroAdmin(admin.ModelAdmin):
     search_fields = ('codMaestro',)
 
 class pacienteAdmin(admin.ModelAdmin):
-    list_display = ('tipo_doc','num_doc','ape_pat','ape_mat','nombres','fecha_nac','casOri','estado')
+    list_display = ('tipo_doc','num_doc','ape_pat','ape_mat','nombres','fecha_nac','cas','estado')
 
 class examenAdmin(admin.ModelAdmin):
     list_display = ('paciente','tipo_exam','archivo_exam','estado_lectura','estado','fecha_reg','user_reg','fecha_mod','user_mod','fecha_eli','user_eli')
