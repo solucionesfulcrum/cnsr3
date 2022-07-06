@@ -33,15 +33,15 @@ class imagenInline(admin.TabularInline):
 #Anemia clinicas
 
 class presAnemiaAdmin(admin.ModelAdmin):
-    list_display = ('paciente','fechaPres','nomNefro','medPres','dosisPres','medHiePres','dosisHiePres','viaAdmPres','viaAdmHiePres')
+    list_display = ('paciente','fechaPres','nomNefro','medPres','dosisPres','medHiePres','dosisHiePres','viaAdmPres','viaAdmHiePres','usuario')
     search_fields = ('nomNefro',)
 
 class admiAnemiaAdmin(admin.ModelAdmin):
-    list_display = ('presAnemia','fechaAdmi','nomEnfer','medAdmi','dosisAdmi','medHieAdmi','dosisHieAdmi','viaAdm','viaAdmHierro')
+    list_display = ('presAnemia','fechaAdmi','nomEnfer','medAdmi','dosisAdmi','medHieAdmi','dosisHieAdmi','viaAdm','viaAdmHierro','usuario')
     search_fields = ('nomEnfer',)
 
 class exclusionAnemiaAdmin(admin.ModelAdmin):
-    list_display = ('paciente','fechaExclu','razonExclu','ObservaExclu')
+    list_display = ('paciente','fechaExclu','razonExclu','ObservaExclu','usuario')
     search_fields = ('razonExclu',)
 
 class movimientoAnemiaAdmin(admin.ModelAdmin):

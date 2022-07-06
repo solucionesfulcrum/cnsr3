@@ -82,6 +82,7 @@ class presAnemia(models.Model):
     dosisHiePres = models.IntegerField()
     viaAdmPres = models.CharField(max_length=10)
     viaAdmHiePres = models.CharField(max_length=10)
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nomNefro
@@ -96,6 +97,7 @@ class admiAnemia(models.Model):
     dosisHieAdmi = models.IntegerField()
     viaAdm = models.CharField(max_length=10)
     viaAdmHierro = models.CharField(max_length=10)
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nomEnfer
@@ -105,6 +107,7 @@ class exclusionAnemia(models.Model):
     fechaExclu = models.DateField()
     razonExclu = models.CharField(max_length=30)
     ObservaExclu = models.CharField(max_length=30)
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.razonExclu

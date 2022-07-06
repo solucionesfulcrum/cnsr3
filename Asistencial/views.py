@@ -70,21 +70,21 @@ class presAnemiaViewSet(viewsets.ModelViewSet):
     serializer_class = presAnemiaSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=paciente__id']
+    search_fields = ['=paciente__id','=usuario__cas__codCas']
 
 class admiAnemiaViewSet(viewsets.ModelViewSet):
     queryset = admiAnemia.objects.all().order_by('-id')
     serializer_class = admiAnemiaSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=presAnemia__paciente__id']
+    search_fields = ['=presAnemia__paciente__id','=usuario__cas__codCas']
 
 class exclusionAnemiaViewSet(viewsets.ModelViewSet):
     queryset = exclusionAnemia.objects.all().order_by('-id')
     serializer_class = exclusionAnemiaSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=paciente__id']
+    search_fields = ['=paciente__id','=usuario__cas__codCas']
 
 class movimientoAnemiaViewSet(viewsets.ModelViewSet):
     queryset = movimientoAnemia.objects.all().order_by('-id')
