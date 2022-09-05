@@ -50,11 +50,13 @@ router.register(r'bienHadware', viewsAsis.bienHadwareViewSet)
 router.register(r'bienSoftware', viewsAsis.bienSoftwareViewSet)
 router.register(r'bienDetalleMonitor', viewsAsis.bienDetalleMonitorViewSet)
 router.register(r'nutricion', viewsAsis.nutricionViewSet)
-router.register(r'personalVpn', viewsAsis.personalVpnActViewSet)
+router.register(r'personalVpn', viewsAsis.personalVpnViewSet)
 router.register(r'personalCertificado', viewsAsis.personalCertificadoViewSet)
 router.register(r'valGlobalSub', viewsAsis.valGlobalSubViewSet)
 router.register(r'usuario', viewsAsis.usuarioViewSet)
 router.register(r'cas', viewsAsis.casViewSet)
+router.register(r'delegaciones', viewsAsis.delegacionBienesEstraViewSet)
+
 
 urlpatterns = [
     path('', include(router.urls)),

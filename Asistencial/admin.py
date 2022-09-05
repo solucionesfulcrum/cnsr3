@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpnAct, personalCertificado, valGlobalSub
+from Asistencial.models import cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra
 
 # Ubicacion usuario
 class casAdmin(admin.ModelAdmin):
@@ -113,8 +113,8 @@ class incidenciaDsiAdmin(admin.ModelAdmin):
     search_fields = ('estado__codMaestro',)
     list_filter = ('estado','clasiSolu')
 
-class personalVpnActAdmin(admin.ModelAdmin):
-    list_display = ('personal','ip','usuario','clave','personalAutoriza','fechaHabilita','fechaInstalacion','observacion','fecha_reg','dato')
+class personalVpnAdmin(admin.ModelAdmin):
+    list_display = ('personal','ip','usuario','clave','personalAutoriza','fechaHabilita','fechaInstalacion','observacion','fecha_reg')
     autocomplete_fields = ('personal',)
     search_fields = ('usuario',)
 
@@ -122,6 +122,10 @@ class personalCertificadoAdmin(admin.ModelAdmin):
     list_display = ('personal','fechaSolicita','tipoCertificado','fechaInstalacion','perosnalInstala','observacion','fecha_reg')
     autocomplete_fields = ('personal',)
     search_fields = ('tipoCertificado',)
+
+class delegacionBienesEstraAdmin(admin.ModelAdmin):
+    list_display = ('solPed','codigoSap','producto','unidadMedida','cantidad','fechaDelegacion','pediodoDelegacion','fechaDerivacion','fechaRequerimiento','periodoSolicitado','fechaLogistica','numOrdenCompra','monto','fechaIngresoAlmacen','fechaPago','anulacionPedido','fecha_reg','userOpc','userUsuario','userLogistica','userFinanzas','estado')
+    search_fields = ('solPed',)
 
 admin.site.register(cas, casAdmin)
 
@@ -155,5 +159,7 @@ admin.site.register(provMaq, provMaqAdmin)
 
 
 admin.site.register(incidenciaDsi, incidenciaDsiAdmin)
-admin.site.register(personalVpnAct, personalVpnActAdmin)
+admin.site.register(personalVpn, personalVpnAdmin)
 admin.site.register(personalCertificado, personalCertificadoAdmin)
+
+admin.site.register(delegacionBienesEstra, delegacionBienesEstraAdmin)

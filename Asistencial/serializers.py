@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from Asistencial.models import cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpnAct, personalCertificado, valGlobalSub
+from Asistencial.models import delegacionBienesEstra, cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub
 from rest_framework import serializers
 
 from datetime import datetime
@@ -162,10 +162,10 @@ class incidenciaDsiSerializer(serializers.HyperlinkedModelSerializer):
         model = incidenciaDsi
         fields = '__all__' 
 
-class personalVpnActSerializer(serializers.HyperlinkedModelSerializer):
+class personalVpnSerializer(serializers.HyperlinkedModelSerializer):
     datosPersonal = personalSerializer(source = "personal", read_only=True)
     class Meta:
-        model = personalVpnAct
+        model = personalVpn
         fields = '__all__' 
 
 class personalCertificadoSerializer(serializers.HyperlinkedModelSerializer):
@@ -173,3 +173,8 @@ class personalCertificadoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = personalCertificado
         fields = '__all__' 
+
+class delegacionBienesEstraSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = delegacionBienesEstra
+        fields = '__all__'

@@ -288,7 +288,7 @@ class incidenciaDsi(models.Model):
     numTicket = models.CharField(max_length=20)
     estado = models.ForeignKey(maestro, on_delete=models.CASCADE)
 
-class personalVpnAct(models.Model): 
+class personalVpn(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
     ip = models.CharField(max_length=30, null=True, blank=True)
     usuario = models.CharField(max_length=30)
@@ -298,7 +298,6 @@ class personalVpnAct(models.Model):
     fechaInstalacion = models.DateField(null=True, blank=True)
     observacion = models.CharField(max_length=200,null=True, blank=True)
     fecha_reg = models.DateTimeField(auto_now=True)
-    dato = models.CharField(max_length=30)
 
     def __str__(self):
         return self.usuario
@@ -314,3 +313,30 @@ class personalCertificado(models.Model):
 
     def __str__(self):
         return self.tipoCertificado
+
+class delegacionBienesEstra(models.Model):
+    solPed = models.CharField(max_length=30, null=True, blank=True)
+    codigoSap = models.CharField(max_length=30, null=True, blank=True)
+    producto = models.CharField(max_length=150, null=True, blank=True)
+    unidadMedida = models.CharField(max_length=15, null=True, blank=True)
+    cantidad = models.IntegerField(null=True, blank=True)
+    fechaDelegacion = models.DateField(null=True, blank=True)
+    pediodoDelegacion = models.CharField(max_length=100, null=True, blank=True)
+    fechaDerivacion = models.DateField(null=True, blank=True)
+    fechaRequerimiento = models.DateField(null=True, blank=True)
+    periodoSolicitado = models.CharField(max_length=100, null=True, blank=True)
+    fechaLogistica = models.DateField(null=True, blank=True)
+    numOrdenCompra = models.CharField(max_length=50, null=True, blank=True)
+    monto = models.CharField(max_length=50, null=True, blank=True)
+    fechaIngresoAlmacen = models.DateField(null=True, blank=True)
+    fechaPago = models.DateField(null=True, blank=True)
+    anulacionPedido = models.CharField(max_length=200, null=True, blank=True)
+    fecha_reg = models.DateTimeField(auto_now=True)
+    userOpc = models.CharField(max_length=50, null=True, blank=True)
+    userUsuario = models.CharField(max_length=50, null=True, blank=True)
+    userLogistica = models.CharField(max_length=50, null=True, blank=True)
+    userFinanzas = models.CharField(max_length=50, null=True, blank=True)
+    estado = models.CharField(max_length=10, null=True, blank=True)
+
+    def __str__(self):
+        return self.solPed
