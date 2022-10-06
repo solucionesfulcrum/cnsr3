@@ -130,12 +130,16 @@ class nutricion(models.Model):
     peso = models.CharField(max_length=30)
     talla = models.CharField(max_length=30)
     imc = models.CharField(max_length=30)
+    circuBra = models.CharField(max_length=30)
     porcentajeCMB = models.CharField(max_length=30)
+    medCali = models.CharField(max_length=30, null=True, blank=True)
     porcentajeEPT = models.CharField(max_length=30, null=True, blank=True)
     albSerica = models.CharField(max_length=30)
     ValGlobalSub = models.CharField(max_length=30, null=True, blank=True)
     ingestaCalorica = models.CharField(max_length=60)
     ingestaProteica = models.CharField(max_length=60)
+    ingestaCaloricaT = models.CharField(max_length=60)
+    ingestaProteicaT = models.CharField(max_length=60)
     diagNutricional = models.CharField(max_length=60)
     interveNutricional = models.CharField(max_length=60)
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
@@ -317,7 +321,7 @@ class personalCertificado(models.Model):
 class delegacionBienesEstra(models.Model):
     solPed = models.CharField(max_length=30, null=True, blank=True)
     codigoSap = models.CharField(max_length=30, null=True, blank=True)
-    producto = models.CharField(max_length=150, null=True, blank=True)
+    producto = models.CharField(max_length=200, null=True, blank=True)
     unidadMedida = models.CharField(max_length=15, null=True, blank=True)
     cantidad = models.IntegerField(null=True, blank=True)
     fechaDelegacion = models.DateField(null=True, blank=True)
@@ -337,6 +341,33 @@ class delegacionBienesEstra(models.Model):
     userLogistica = models.CharField(max_length=50, null=True, blank=True)
     userFinanzas = models.CharField(max_length=50, null=True, blank=True)
     estado = models.CharField(max_length=10, null=True, blank=True)
+    posiFinaciera = models.CharField(max_length=50, null=True, blank=True)
+    tipoBienEstra = models.CharField(max_length=50, null=True, blank=True)
+    valorTotal = models.CharField(max_length=50, null=True, blank=True)
+    fechaEmiOrden = models.DateField(null=True, blank=True)
+    observaLogistica = models.CharField(max_length=200, null=True, blank=True)
+    tipoDoc = models.CharField(max_length=50, null=True, blank=True)
+    numDoc = models.CharField(max_length=150, null=True, blank=True)
+    cantiRequeridaUsu = models.IntegerField(null=True, blank=True)
+    obsUsu = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.solPed
+
+class maestroMatSap(models.Model):
+    codSap = models.CharField(max_length=30)
+    tipoBienes = models.CharField(max_length=70)
+    desProducto = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.codSap
+
+class parNuticion(models.Model):
+    edad = models.IntegerField()
+    pt = models.DecimalField(max_digits = 10, decimal_places = 2)
+    cb = models.DecimalField(max_digits = 10, decimal_places = 2)
+    cmb = models.DecimalField(max_digits = 10, decimal_places = 2)
+    sexo = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.sexo

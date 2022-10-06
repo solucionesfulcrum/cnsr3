@@ -56,7 +56,8 @@ router.register(r'valGlobalSub', viewsAsis.valGlobalSubViewSet)
 router.register(r'usuario', viewsAsis.usuarioViewSet)
 router.register(r'cas', viewsAsis.casViewSet)
 router.register(r'delegaciones', viewsAsis.delegacionBienesEstraViewSet)
-
+router.register(r'mestroSap', viewsAsis.maestroMatSapViewSet)
+router.register(r'parNutricion', viewsAsis.parNuticionViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

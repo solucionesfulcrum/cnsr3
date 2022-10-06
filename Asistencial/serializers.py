@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from Asistencial.models import delegacionBienesEstra, cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub
+from Asistencial.models import maestroMatSap,parNuticion,delegacionBienesEstra, cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub
 from rest_framework import serializers
 
 from datetime import datetime
@@ -177,4 +177,14 @@ class personalCertificadoSerializer(serializers.HyperlinkedModelSerializer):
 class delegacionBienesEstraSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = delegacionBienesEstra
+        fields = '__all__'
+
+class maestroMatSapSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = maestroMatSap
+        fields = '__all__'
+
+class parNuticionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = parNuticion
         fields = '__all__'

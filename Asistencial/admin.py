@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra
+from Asistencial.models import parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra
 
 # Ubicacion usuario
 class casAdmin(admin.ModelAdmin):
@@ -17,7 +17,7 @@ class maestroAdmin(admin.ModelAdmin):
     search_fields = ('codMaestro',)
 
 class pacienteAdmin(admin.ModelAdmin):
-    list_display = ('tipo_doc','num_doc','ape_pat','ape_mat','nombres','fecha_nac','cas','estado')
+    list_display = ('tipo_doc','num_doc','ape_pat','ape_mat','nombres','fecha_nac','sexo','cas','estado')
 
 class examenAdmin(admin.ModelAdmin):
     list_display = ('paciente','tipo_exam','archivo_exam','estado_lectura','estado','fecha_reg','user_reg','fecha_mod','user_mod','fecha_eli','user_eli')
@@ -49,7 +49,7 @@ class movimientoAnemiaAdmin(admin.ModelAdmin):
     search_fields = ('razonMotivo',)
 
 class nutricionAdmin(admin.ModelAdmin):
-    list_display = ('paciente','turno','frecuencia','fechaIngreso','fechaEvaluacion','peso','talla','imc','porcentajeCMB','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','diagNutricional','interveNutricional','usuario','fechaReg','pacNuevo')
+    list_display = ('paciente','turno','frecuencia','fechaIngreso','fechaEvaluacion','peso','talla','imc','circuBra','porcentajeCMB','medCali','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','ingestaCaloricaT','ingestaProteicaT','diagNutricional','interveNutricional','usuario','fechaReg','pacNuevo')
     search_fields = ('frecuencia',)
 
 #Datos de Hospitales VGS
@@ -124,8 +124,17 @@ class personalCertificadoAdmin(admin.ModelAdmin):
     search_fields = ('tipoCertificado',)
 
 class delegacionBienesEstraAdmin(admin.ModelAdmin):
-    list_display = ('solPed','codigoSap','producto','unidadMedida','cantidad','fechaDelegacion','pediodoDelegacion','fechaDerivacion','fechaRequerimiento','periodoSolicitado','fechaLogistica','numOrdenCompra','monto','fechaIngresoAlmacen','fechaPago','anulacionPedido','fecha_reg','userOpc','userUsuario','userLogistica','userFinanzas','estado')
+    list_display = ('solPed','codigoSap','producto','unidadMedida','cantidad','fechaDelegacion','pediodoDelegacion','fechaDerivacion','fechaRequerimiento','periodoSolicitado','fechaLogistica','numOrdenCompra','monto','fechaIngresoAlmacen','fechaPago','anulacionPedido','fecha_reg','userOpc','userUsuario','userLogistica','userFinanzas','estado','posiFinaciera','tipoBienEstra','valorTotal','fechaEmiOrden','observaLogistica','tipoDoc','numDoc','cantiRequeridaUsu','obsUsu')
     search_fields = ('solPed',)
+
+class maestroMatSapAdmin(admin.ModelAdmin):
+    list_display = ('codSap','tipoBienes','desProducto')
+    search_fields = ('codSap',)
+
+class parNuticionAdmin(admin.ModelAdmin):
+    list_display = ('edad','pt','cb','cmb','sexo')
+    search_fields = ('sexo',)
+
 
 admin.site.register(cas, casAdmin)
 
@@ -163,3 +172,6 @@ admin.site.register(personalVpn, personalVpnAdmin)
 admin.site.register(personalCertificado, personalCertificadoAdmin)
 
 admin.site.register(delegacionBienesEstra, delegacionBienesEstraAdmin)
+admin.site.register(maestroMatSap, maestroMatSapAdmin)
+
+admin.site.register(parNuticion, parNuticionAdmin)
