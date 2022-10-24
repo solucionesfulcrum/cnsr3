@@ -1,0 +1,178 @@
+@M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  P gina :          1
+Servicios Contratados 3.2                                         Fecha  : 20/10/2022
+Programa : sccnsacp.frx                                           Hora   :   07:08:40
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 3502151LAMOL003
+Nombre       : LAVADO MAYORCA LEONARDO ESAU            
+
+Unidad de Inform tica
+-------------------------------------------------------------------------------------
+  D¡a C¢digo   An lisis Cl¡nico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+ OCTUBRE DEL 2,022   
+  05  4000042  PLAQUETAS                            plaq        150000.00           
+  05  4000002  UREA POST                            UPost           50.00 mg/dl     
+  05  4000001  UREA PRE                             UPre           174.00 mg/dl     
+  05  3330420  LINFOCITOS                           LINFO           13.10 Und.      
+  05  3330419  HEMOGLOBINA                          Hb              12.30 g/dl      
+  05  3330418  HEMATOCRITO                          HTO             38.50 %         
+  05  3330417  MONOCITOS                            MONO             9.00 Und.      
+  05  3330416  BASOFILOS                            pBAS             0.30 Und.      
+  05  3330415  EOSINOFILOS                          EOS              9.80 Und.      
+  05  3330414  SEGMENTADOS                          Seg             67.80 Und.      
+  05  3330412  LEUCOCITOS                           LEUCO         5510.00 mm3       
+  05  3330161  ALBUMINA                             Alb              3.70 g/dl      
+  05  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO             19.00 U/L       
+  05  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP             17.00 U/L       
+   
+ SETIEMBRE DEL 2,022 
+  07  4000045  CONCENTRACION MEDIO HEMOGLOBINA      CMHC            31.70 g/dl      
+  07  4000044  HEMOGLOBINA GLOBULAR                 HCM             28.70 pg        
+  07  4000043  VOLUMEN CORPUSCULAR MEDIO            VCM             90.40 fl        
+  07  4000042  PLAQUETAS                            plaq        168000.00           
+  07  4000041  TRANSFERRINA                         TFERRINA       171.00 mg/dl     
+  07  4000037  PORCENTAJE DE SATURACION             POR_SAT         18.00 %         
+  07  4000033  PROTEINA C REACTIVA                  PCR              0.59 mg/dl     
+  07  4000030  PARATHORMONAS                        PTH            135.60 pg/ml     
+  07  4000028  FERRITINA                            Ferritina      333.50 ng/ml     
+  07  4000026  FIERRO                               Fe               7.70 umol/L    
+  07  4000010  CREATININA POST                      CreaPost         1.50 mg/dl     
+  07  4000009  CREATININA PRE                       CreaPre          5.30 mg/dl     
+  07  4000008  ANTICUERPO HEPATITIS C               AntHC      NO REACTIV           
+  07  4000005  AntiCoreT                            AntiCoreT  REACTIVO             
+  07  4000003  ANTIGENO DE SUPERFICIE HEPATITIS B   AgHBs      NO REACTIV           
+  07  4000002  UREA POST                            UPost           51.00 mg/dl     
+  07  4000001  UREA PRE                             UPre           203.00 mg/dl     
+  07  3330420  LINFOCITOS                           LINFO           14.90 Und.      
+  07  3330419  HEMOGLOBINA                          Hb              10.40 g/dl      
+  07  3330418  HEMATOCRITO                          HTO             32.80 %         
+  07  3330417  MONOCITOS                            MONO            11.30 Und.      
+  07  3330416  BASOFILOS                            pBAS             0.20 Und.      
+  07  3330415  EOSINOFILOS                          EOS              6.20 Und.      
+  07  3330414  SEGMENTADOS                          Seg             67.40 Und.      
+  07  3330412  LEUCOCITOS                           LEUCO         6340.00 mm3       
+  07  3330145  COLESTEROL LDL                       LDL             26.00 mg/dl     
+  07  3330144  COLESTEROL HDL                       HDL             60.00 mg/dl     
+  07  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO             20.00 U/L       
+   @M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  P gina :          2
+Servicios Contratados 3.2                                         Fecha  : 20/10/2022
+Programa : sccnsacp.frx                                           Hora   :   07:08:40
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 3502151LAMOL003
+Nombre       : LAVADO MAYORCA LEONARDO ESAU            
+
+Unidad de Inform tica
+-------------------------------------------------------------------------------------
+  D¡a C¢digo   An lisis Cl¡nico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+  07  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP             32.00 U/L       
+  07  3330116  FOSFORO                              pP               6.10 mg/dl     
+  07  3330115  FOSFATASA ALCALINA                   Fal            302.00 U/L       
+  07  3330107  COLESTEROL                           COL            112.00 mg/dl     
+  07  3330106  TRIGLICERIDOS                        TG              31.00 mg/dl     
+  07  3330104  CALCIO SERICO                        Ca               8.40 mg/dl     
+   
+ AGOSTO DEL 2,022    
+  09  3330147  VDRL                                 VDRL               NM           
+   
+ AGOSTO DEL 2,022    
+  08  4000059  VITAMINA B12                         B12           2000.00 pg/ml     
+  08  4000058  ACIDO FOLICO                         FOLATO          20.00 ng/ml     
+  08  4000045  CONCENTRACION MEDIO HEMOGLOBINA      CMHC            31.80 g/dl      
+  08  4000044  HEMOGLOBINA GLOBULAR                 HCM             28.90 pg        
+  08  4000043  VOLUMEN CORPUSCULAR MEDIO            VCM             90.70 fl        
+  08  4000042  PLAQUETAS                            plaq        153000.00           
+  08  4000041  TRANSFERRINA                         TFERRINA       188.00 mg/dl     
+  08  4000040  ANTICUERPO DE VIH 1-2                AntVIH     NO REACTIV           
+  08  4000037  PORCENTAJE DE SATURACION             POR_SAT          9.00 %         
+  08  4000033  PROTEINA C REACTIVA                  PCR              1.70 mg/dl     
+  08  4000030  PARATHORMONAS                        PTH             84.33 pg/ml     
+  08  4000028  FERRITINA                            Ferritina      626.30 ng/ml     
+  08  4000026  FIERRO                               Fe               4.40 umol/L    
+  08  4000009  CREATININA PRE                       CreaPre          6.90 mg/dl     
+  08  4000008  ANTICUERPO HEPATITIS C               AntHC      NO REACTIV           
+  08  4000005  AntiCoreT                            AntiCoreT          NM           
+  08  4000004  ANTICUERPO C/ANTIGENO DE SUPERFICIE  AntHBs         808.90 UI        
+  08  4000003  ANTIGENO DE SUPERFICIE HEPATITIS B   AgHBs      NO REACTIV           
+  08  4000001  UREA PRE                             UPre           290.00 mg/dl     
+  08  3330420  LINFOCITOS                           LINFO           17.40 Und.      
+  08  3330419  HEMOGLOBINA                          Hb              10.90 g/dl      
+  08  3330418  HEMATOCRITO                          HTO             34.10 %         
+  08  3330417  MONOCITOS                            MONO             9.90 Und.      
+  08  3330416  BASOFILOS                            pBAS             0.30 Und.      
+  08  3330415  EOSINOFILOS                          EOS              2.90 Und.      
+  08  3330414  SEGMENTADOS                          Seg             69.50 Und.      
+  08  3330412  LEUCOCITOS                           LEUCO         6470.00 mm3       
+  08  3330161  ALBUMINA                             Alb              3.90 g/dl      
+  08  3330160  PROTEINAS TOTALES                    PT               6.60 g/dl      
+  08  3330147  VDRL                                 VDRL               NM           
+  08  3330145  COLESTEROL LDL                       LDL             28.00 mg/dl     
+  08  3330144  COLESTEROL HDL                       HDL             79.00 mg/dl     
+  08  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO             19.00 U/L       
+  08  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP             22.00 U/L       
+   @M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  P gina :          3
+Servicios Contratados 3.2                                         Fecha  : 20/10/2022
+Programa : sccnsacp.frx                                           Hora   :   07:08:40
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 3502151LAMOL003
+Nombre       : LAVADO MAYORCA LEONARDO ESAU            
+
+Unidad de Inform tica
+-------------------------------------------------------------------------------------
+  D¡a C¢digo   An lisis Cl¡nico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+  08  3330116  FOSFORO                              pP               3.80 mg/dl     
+  08  3330115  FOSFATASA ALCALINA                   Fal            259.00 U/L       
+  08  3330107  COLESTEROL                           COL            138.00 mg/dl     
+  08  3330106  TRIGLICERIDOS                        TG              32.00 mg/dl     
+  08  3330104  CALCIO SERICO                        Ca               8.90 mg/dl     
+  08  3330101  ACIDO URICO                          ado              5.20 mg/dl     
+   
+-------------------------------------------------------------------------------------
+*** FIN DE REPORTE ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
