@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra
+from Asistencial.models import docuContratados, parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra, listaEspera
 
 # Ubicacion usuario
 class casAdmin(admin.ModelAdmin):
@@ -49,7 +49,7 @@ class movimientoAnemiaAdmin(admin.ModelAdmin):
     search_fields = ('razonMotivo',)
 
 class nutricionAdmin(admin.ModelAdmin):
-    list_display = ('paciente','turno','frecuencia','fechaIngreso','fechaEvaluacion','peso','talla','imc','circuBra','porcentajeCMB','medCali','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','ingestaCaloricaT','ingestaProteicaT','diagNutricional','interveNutricional','usuario','fechaReg','pacNuevo')
+    list_display = ('paciente','turno','frecuencia','tipoPaciente','fechaIngreso','fechaEvaluacion','peso','talla','imc','circuBra','porcentajeCMB','medCali','porcentajeEPT','albSerica','ValGlobalSub','ingestaCalorica','ingestaProteica','ingestaCaloricaT','ingestaProteicaT','diagNutricional','interveNutricional','obsNutricion','usuario','fechaReg','pacNuevo')
     search_fields = ('frecuencia',)
 
 #Datos de Hospitales VGS
@@ -135,6 +135,13 @@ class parNuticionAdmin(admin.ModelAdmin):
     list_display = ('edad','pt','cb','cmb','sexo')
     search_fields = ('sexo',)
 
+class listaEsperaAdmin(admin.ModelAdmin):
+    list_display = ('fechaSoli','paciente','telefono','casOrigen','casDestino','distrito','turno','referencia','observaciones','estado','fecha_reg','user_reg','fecha_mod')
+    search_fields = ('paciente',)
+
+class docuContratadosAdmin(admin.ModelAdmin):
+    list_display = ('cas','formato','archivo','estado','fecha_reg','usuario_reg','fecha_edit')
+    search_fields = ('formato',)
 
 admin.site.register(cas, casAdmin)
 
@@ -175,3 +182,7 @@ admin.site.register(delegacionBienesEstra, delegacionBienesEstraAdmin)
 admin.site.register(maestroMatSap, maestroMatSapAdmin)
 
 admin.site.register(parNuticion, parNuticionAdmin)
+
+admin.site.register(listaEspera, listaEsperaAdmin)
+
+admin.site.register(docuContratados, docuContratadosAdmin)

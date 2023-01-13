@@ -123,25 +123,27 @@ class movimientoAnemia(models.Model):
 
 class nutricion(models.Model):
     paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
-    turno = models.CharField(max_length=30)
-    frecuencia = models.CharField(max_length=30)
+    turno = models.CharField(max_length=30, null=True, blank=True)
+    frecuencia = models.CharField(max_length=30, null=True, blank=True)
     fechaIngreso = models.DateField(null=True, blank=True)
+    tipoPaciente = models.CharField(max_length=40, null=True, blank=True)
     fechaEvaluacion = models.DateField(null=True, blank=True)
-    peso = models.CharField(max_length=30)
-    talla = models.CharField(max_length=30)
-    imc = models.CharField(max_length=30)
-    circuBra = models.CharField(max_length=30)
-    porcentajeCMB = models.CharField(max_length=30)
+    peso = models.CharField(max_length=30, null=True, blank=True)
+    talla = models.CharField(max_length=30, null=True, blank=True)
+    imc = models.CharField(max_length=30, null=True, blank=True)
+    circuBra = models.CharField(max_length=30, null=True, blank=True)
+    porcentajeCMB = models.CharField(max_length=30, null=True, blank=True)
     medCali = models.CharField(max_length=30, null=True, blank=True)
     porcentajeEPT = models.CharField(max_length=30, null=True, blank=True)
-    albSerica = models.CharField(max_length=30)
-    ValGlobalSub = models.CharField(max_length=30, null=True, blank=True)
-    ingestaCalorica = models.CharField(max_length=60)
-    ingestaProteica = models.CharField(max_length=60)
-    ingestaCaloricaT = models.CharField(max_length=60)
-    ingestaProteicaT = models.CharField(max_length=60)
-    diagNutricional = models.CharField(max_length=60)
-    interveNutricional = models.CharField(max_length=60)
+    albSerica = models.CharField(max_length=30, null=True, blank=True)
+    ValGlobalSub = models.CharField(max_length=30, null=True, blank=True, default="NA")
+    ingestaCalorica = models.CharField(max_length=60, null=True, blank=True)
+    ingestaProteica = models.CharField(max_length=60, null=True, blank=True)
+    ingestaCaloricaT = models.CharField(max_length=60, null=True, blank=True)
+    ingestaProteicaT = models.CharField(max_length=60, null=True, blank=True)
+    diagNutricional = models.CharField(max_length=60, null=True, blank=True)
+    interveNutricional = models.CharField(max_length=60, null=True, blank=True)
+    obsNutricion = models.CharField(max_length=100, null=True, blank=True)
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
     fechaReg = models.DateTimeField(auto_now_add=True)
     pacNuevo = models.BooleanField()
@@ -284,10 +286,10 @@ class bienDetalleMonitor(models.Model):
 
 class incidenciaDsi(models.Model): 
     personal = models.ForeignKey(personal, on_delete=models.CASCADE)
-    problema = models.CharField(max_length=200)
+    problema = models.CharField(max_length=1000)
     clasiSolu = models.CharField(max_length=50, null=True)
-    solucion = models.CharField(max_length=500, null=True)
-    userReg = models.CharField(max_length=20)
+    solucion = models.CharField(max_length=1000, null=True)
+    userReg = models.CharField(max_length=200)
     fecha_reg = models.DateTimeField(auto_now=True)
     numTicket = models.CharField(max_length=20)
     estado = models.ForeignKey(maestro, on_delete=models.CASCADE)
@@ -371,3 +373,34 @@ class parNuticion(models.Model):
 
     def __str__(self):
         return self.sexo
+
+class listaEspera(models.Model):
+    fechaSoli = models.DateField(null=True, blank=True)
+    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
+    telefono = models.CharField(max_length=30, null=True, blank=True)
+    casOrigen = models.CharField(max_length=100, null=True, blank=True)
+    casDestino = models.CharField(max_length=100, null=True, blank=True)
+    #casDestino = models.ForeignKey(cas, on_delete=models.CASCADE)
+    distrito = models.CharField(max_length=120, null=True, blank=True)
+    turno = models.CharField(max_length=30, null=True, blank=True)
+    referencia = models.CharField(max_length=60, null=True, blank=True)
+    observaciones = models.CharField(max_length=120, null=True, blank=True)
+    estado = models.BooleanField()
+    fecha_reg = models.DateTimeField(auto_now=True)
+    user_reg = models.CharField(max_length=150, null=True, blank=True)
+    fecha_mod = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return self.turno
+
+class docuContratados(models.Model):
+    cas = models.ForeignKey(cas, on_delete=models.CASCADE)
+    formato = models.CharField(max_length=100, null=True, blank=True)
+    archivo = models.FileField(upload_to='formato/', null=True)
+    estado = models.CharField(max_length=5, null=True, blank=True)
+    fecha_reg = models.DateField(auto_now=True)
+    usuario_reg = models.CharField(max_length=40, null=True, blank=True)
+    fecha_edit = models.DateField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.formato

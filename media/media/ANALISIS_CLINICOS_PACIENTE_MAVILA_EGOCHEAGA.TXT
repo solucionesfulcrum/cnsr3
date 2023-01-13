@@ -1,0 +1,60 @@
+@M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  P gina :          1
+Servicios Contratados 3.2                                         Fecha  : 16/11/2022
+Programa : sccnsacp.frx                                           Hora   :   20:12:31
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 7211041MIECL007
+Nombre       : MAVILA EGOCHEAGA LUIS ALBERTO EU        
+
+Unidad de Inform tica
+-------------------------------------------------------------------------------------
+  D¡a C¢digo   An lisis Cl¡nico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+ OCTUBRE DEL 2,022   
+  05  4000059  VITAMINA B12                         B12           2000.00 pg/ml     
+  05  4000058  ACIDO FOLICO                         FOLATO          20.00 ng/ml     
+  05  4000045  CONCENTRACION MEDIO HEMOGLOBINA      CMHC            32.60 g/dl      
+  05  4000044  HEMOGLOBINA GLOBULAR                 HCM             29.00 pg        
+  05  4000043  VOLUMEN CORPUSCULAR MEDIO            VCM             88.80 fl        
+  05  4000042  PLAQUETAS                            plaq        298000.00           
+  05  4000041  TRANSFERRINA                         TFERRINA       188.00 mg/dl     
+  05  4000040  ANTICUERPO DE VIH 1-2                AntVIH     NO REACTIV           
+  05  4000037  PORCENTAJE DE SATURACION             POR_SAT         23.00 %         
+  05  4000033  PROTEINA C REACTIVA                  PCR              6.58 mg/dl     
+  05  4000030  PARATHORMONAS                        PTH            677.50 pg/ml     
+  05  4000028  FERRITINA                            Ferritina      496.90 ng/ml     
+  05  4000026  FIERRO                               Fe              11.00 umol/L    
+  05  4000009  CREATININA PRE                       CreaPre          6.50 mg/dl     
+  05  4000008  ANTICUERPO HEPATITIS C               AntHC      NO REACTIV           
+  05  4000005  AntiCoreT                            AntiCoreT  NO REACTIV           
+  05  4000004  ANTICUERPO C/ANTIGENO DE SUPERFICIE  AntHBs     NO REACTIV UI        
+  05  4000003  ANTIGENO DE SUPERFICIE HEPATITIS B   AgHBs      NO REACTIV           
+  05  4000001  UREA PRE                             UPre           192.00 mg/dl     
+  05  3330420  LINFOCITOS                           LINFO           22.30 Und.      
+  05  3330419  HEMOGLOBINA                          Hb               9.70 g/dl      
+  05  3330418  HEMATOCRITO                          HTO             29.70 %         
+  05  3330417  MONOCITOS                            MONO             6.50 Und.      
+  05  3330416  BASOFILOS                            pBAS             0.30 Und.      
+  05  3330415  EOSINOFILOS                          EOS              3.10 Und.      
+  05  3330414  SEGMENTADOS                          Seg             67.80 Und.      
+  05  3330412  LEUCOCITOS                           LEUCO         7390.00 mm3       
+  05  3330161  ALBUMINA                             Alb              3.70 g/dl      
+  05  3330160  PROTEINAS TOTALES                    PT               6.80 g/dl      
+  05  3330147  VDRL                                 VDRL       NO REACTIV           
+  05  3330145  COLESTEROL LDL                       LDL            131.00 mg/dl     
+  05  3330144  COLESTEROL HDL                       HDL             32.00 mg/dl     
+  05  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO             18.00 U/L       
+  05  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP             15.00 U/L       
+  05  3330116  FOSFORO                              pP               5.20 mg/dl     
+  05  3330115  FOSFATASA ALCALINA                   Fal            101.00 U/L       
+  05  3330107  COLESTEROL                           COL            208.00 mg/dl     
+  05  3330106  TRIGLICERIDOS                        TG             137.00 mg/dl     
+  05  3330104  CALCIO SERICO                        Ca              10.80 mg/dl     
+  05  3330101  ACIDO URICO                          ado              9.80 mg/dl     
+   
+-------------------------------------------------------------------------------------
+*** FIN DE REPORTE ***
+
+   

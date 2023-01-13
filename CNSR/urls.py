@@ -58,6 +58,8 @@ router.register(r'cas', viewsAsis.casViewSet)
 router.register(r'delegaciones', viewsAsis.delegacionBienesEstraViewSet)
 router.register(r'mestroSap', viewsAsis.maestroMatSapViewSet)
 router.register(r'parNutricion', viewsAsis.parNuticionViewSet)
+router.register(r'listaEspera', viewsAsis.listaEsperaViewSet)
+router.register(r'docuContratados', viewsAsis.docuContratadosViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
