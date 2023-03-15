@@ -404,3 +404,28 @@ class docuContratados(models.Model):
     
     def __str__(self):
         return self.formato
+
+class parameCentro(models.Model):
+    cas = models.ForeignKey(cas, on_delete=models.CASCADE)
+    turno = models.CharField(max_length=50)
+    frecuencia = models.CharField(max_length=100)
+    capacidad = models.IntegerField()
+    estado = models.BooleanField()
+    fecha_reg = models.DateField(auto_now=True)
+    usuario_reg = models.CharField(max_length=40, null=True, blank=True)
+   
+    def __str__(self):
+        return self.turno
+
+class parameCentroPuesto(models.Model):
+    cas = models.ForeignKey(cas, on_delete=models.CASCADE)
+    turno = models.CharField(max_length=50)
+    frecuencia = models.CharField(max_length=100)
+    tipoPuesto = models.CharField(max_length=50)
+    numeroPuesto = models.IntegerField()
+    estado = models.BooleanField()
+    fecha_reg = models.DateField(auto_now=True)
+    usuario_reg = models.CharField(max_length=40, null=True, blank=True)
+   
+    def __str__(self):
+        return self.turno

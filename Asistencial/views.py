@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from Asistencial.models import docuContratados,listaEspera,parNuticion,maestroMatSap,delegacionBienesEstra, cas, usuario, paciente, examen, archivo, bienAmbiente, bienImag, presAnemia,admiAnemia, exclusionAnemia, movimientoAnemia, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub
-from Asistencial.serializers import docuContratadosSerializer,listaEsperaSerializer,parNuticionSerializer,maestroMatSapSerializer,delegacionBienesEstraSerializer, casSerializer ,usuarioSerializer, PacienteSerializer, ExamenSerializer, ArchivoSerializer, presAnemiaSerializer, admiAnemiaSerializer, exclusionAnemiaSerializer, movimientoAnemiaSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer, bienHadwareSerializer, bienSoftwareSerializer, bienDetalleMonitorSerializer, nutricionSerializer, personalVpnSerializer, personalCertificadoSerializer, valGlobalSubSerializer
+from Asistencial.models import parameCentroPuesto,parameCentro,docuContratados,listaEspera,parNuticion,maestroMatSap,delegacionBienesEstra, cas, usuario, paciente, examen, archivo, bienAmbiente, bienImag, presAnemia,admiAnemia, exclusionAnemia, movimientoAnemia, bienPersonal, bienpat, dependencia, ambiente, personal, proveedor, provMaq, incidenciaDsi, maestro, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub
+from Asistencial.serializers import parameCentroPuestoSerializer,parameCentroSerializer,docuContratadosSerializer,listaEsperaSerializer,parNuticionSerializer,maestroMatSapSerializer,delegacionBienesEstraSerializer, casSerializer ,usuarioSerializer, PacienteSerializer, ExamenSerializer, ArchivoSerializer, presAnemiaSerializer, admiAnemiaSerializer, exclusionAnemiaSerializer, movimientoAnemiaSerializer, bienAmbienteSerializer, bienImagSerializer, bienPersonalSerializer, bienpatSerializer, dependenciaSerializer, ambienteSerializer, personalSerializer, proveedorSerializer, provMaqSerializer, incidenciaDsiSerializer, maestroSerializer, bienHadwareSerializer, bienSoftwareSerializer, bienDetalleMonitorSerializer, nutricionSerializer, personalVpnSerializer, personalCertificadoSerializer, valGlobalSubSerializer
 from rest_framework import permissions, viewsets, filters
 
 class casViewSet(viewsets.ModelViewSet):
@@ -305,6 +305,26 @@ class docuContratadosViewSet(viewsets.ModelViewSet):
     """
     queryset = docuContratados.objects.all().order_by('-id')
     serializer_class = docuContratadosSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=cas__id','^estado']
+
+class parameCentroViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = parameCentro.objects.all().order_by('-id')
+    serializer_class = parameCentroSerializer
+    permission_classes = [permissions.IsAuthenticated]    
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['=cas__id','^estado']
+
+class parameCentroPuestoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = parameCentroPuesto.objects.all().order_by('-id')
+    serializer_class = parameCentroPuestoSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
     search_fields = ['=cas__id','^estado']

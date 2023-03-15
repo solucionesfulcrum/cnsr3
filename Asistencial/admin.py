@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import docuContratados, parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra, listaEspera
+from Asistencial.models import parameCentroPuesto,parameCentro,docuContratados, parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra, listaEspera
 
 # Ubicacion usuario
 class casAdmin(admin.ModelAdmin):
@@ -143,6 +143,14 @@ class docuContratadosAdmin(admin.ModelAdmin):
     list_display = ('cas','formato','archivo','estado','fecha_reg','usuario_reg','fecha_edit')
     search_fields = ('formato',)
 
+class parameCentroAdmin(admin.ModelAdmin):
+    list_display = ('cas','turno','frecuencia','capacidad','estado','fecha_reg','usuario_reg')
+    search_fields = ('turno',)
+
+class parameCentroPuestoAdmin(admin.ModelAdmin):
+    list_display = ('cas','turno','frecuencia','tipoPuesto','numeroPuesto','estado','fecha_reg','usuario_reg')
+    search_fields = ('turno',)
+
 admin.site.register(cas, casAdmin)
 
 admin.site.register(usuario, usuarioAdmin)
@@ -186,3 +194,8 @@ admin.site.register(parNuticion, parNuticionAdmin)
 admin.site.register(listaEspera, listaEsperaAdmin)
 
 admin.site.register(docuContratados, docuContratadosAdmin)
+
+admin.site.register(parameCentro, parameCentroAdmin)
+admin.site.register(parameCentroPuesto, parameCentroPuestoAdmin)
+
+

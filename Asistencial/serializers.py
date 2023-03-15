@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from Asistencial.models import docuContratados,maestroMatSap,parNuticion,delegacionBienesEstra, cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, listaEspera
+from Asistencial.models import parameCentroPuesto,parameCentro,docuContratados,maestroMatSap,parNuticion,delegacionBienesEstra, cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, listaEspera
 from rest_framework import serializers
 
 from datetime import datetime
@@ -199,4 +199,16 @@ class docuContratadosSerializer(serializers.HyperlinkedModelSerializer):
     datosCas = casSerializer(source = "cas", read_only=True)
     class Meta:
         model = docuContratados
+        fields = '__all__'
+
+class parameCentroSerializer(serializers.HyperlinkedModelSerializer):
+    datosCas = casSerializer(source = "cas", read_only=True)
+    class Meta:
+        model = parameCentro
+        fields = '__all__'
+
+class parameCentroPuestoSerializer(serializers.HyperlinkedModelSerializer):
+    datosCas = casSerializer(source = "cas", read_only=True)
+    class Meta:
+        model = parameCentroPuesto
         fields = '__all__'

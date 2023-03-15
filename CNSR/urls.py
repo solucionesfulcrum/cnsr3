@@ -60,6 +60,8 @@ router.register(r'mestroSap', viewsAsis.maestroMatSapViewSet)
 router.register(r'parNutricion', viewsAsis.parNuticionViewSet)
 router.register(r'listaEspera', viewsAsis.listaEsperaViewSet)
 router.register(r'docuContratados', viewsAsis.docuContratadosViewSet)
+router.register(r'parameCentro', viewsAsis.parameCentroViewSet)
+router.register(r'parameCentroPuesto', viewsAsis.parameCentroPuestoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
