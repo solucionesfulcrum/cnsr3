@@ -1,9 +1,9 @@
 from django.contrib import admin
-from Asistencial.models import parameCentroPuesto,parameCentro,docuContratados, parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra, listaEspera
+from Asistencial.models import asistenciaPaciente,asigCuposPac,parameCentroPuesto,parameCentro,docuContratados, parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra, listaEspera
 
 # Ubicacion usuario
 class casAdmin(admin.ModelAdmin):
-    list_display = ('codCas','descripCas','tipoCas')
+    list_display = ('codCas','descripCas','tipoCas','distrito')
     search_fields = ('tipoCas',)
 
 # Seguridad
@@ -89,7 +89,7 @@ class bienAmbienteAdmin(admin.ModelAdmin):
     autocomplete_fields = ('ambiente','bienpat')
 
 class bienHadwareAdmin(admin.ModelAdmin):
-    list_display = ('bienpat','procesador','numeroIp','numeroMac','memoriaRam','capAlmacenamiento','uso','condicion')
+    list_display = ('bienpat','procesador','numeroIp','numeroIpMv','numeroMac','memoriaRam','capAlmacenamiento','uso','condicion')
     autocomplete_fields = ('bienpat',)
 
 class bienSoftwareAdmin(admin.ModelAdmin):
@@ -151,6 +151,14 @@ class parameCentroPuestoAdmin(admin.ModelAdmin):
     list_display = ('cas','turno','frecuencia','tipoPuesto','numeroPuesto','estado','fecha_reg','usuario_reg')
     search_fields = ('turno',)
 
+class asigCuposPacAdmin(admin.ModelAdmin):
+    list_display = ('parameCentroPuesto','paciente','fechaAsigCupo','fecha_reg','usuario_reg')
+    search_fields = ('usuario_reg',)
+
+class asistenciaPacienteAdmin(admin.ModelAdmin):
+    list_display = ('paciente','fechaAsisPac','estadoAsistencia','fecha_reg','usuario_reg')
+    search_fields = ('usuario_reg',)
+
 admin.site.register(cas, casAdmin)
 
 admin.site.register(usuario, usuarioAdmin)
@@ -197,5 +205,6 @@ admin.site.register(docuContratados, docuContratadosAdmin)
 
 admin.site.register(parameCentro, parameCentroAdmin)
 admin.site.register(parameCentroPuesto, parameCentroPuestoAdmin)
+admin.site.register(asistenciaPaciente, asistenciaPacienteAdmin)
 
 

@@ -6,6 +6,7 @@ class cas(models.Model):
     codCas = models.CharField(max_length=15, unique=True)
     descripCas = models.CharField(max_length=100)
     tipoCas = models.CharField(max_length=10)
+    distrito = models.CharField(max_length=100)
 
     def __str__(self):
         return (self.descripCas)
@@ -268,6 +269,7 @@ class bienHadware(models.Model):
     bienpat = models.ForeignKey(bienpat, on_delete=models.CASCADE)
     procesador = models.CharField(max_length=20)
     numeroIp = models.CharField(max_length=20)
+    numeroIpMv = models.CharField(max_length=20)
     numeroMac = models.CharField(max_length=20)
     memoriaRam = models.CharField(max_length=20)
     capAlmacenamiento = models.CharField(max_length=20)
@@ -412,7 +414,7 @@ class parameCentro(models.Model):
     capacidad = models.IntegerField()
     estado = models.BooleanField()
     fecha_reg = models.DateField(auto_now=True)
-    usuario_reg = models.CharField(max_length=40, null=True, blank=True)
+    usuario_reg = models.CharField(max_length=150, null=True, blank=True)
    
     def __str__(self):
         return self.turno
@@ -425,7 +427,25 @@ class parameCentroPuesto(models.Model):
     numeroPuesto = models.IntegerField()
     estado = models.BooleanField()
     fecha_reg = models.DateField(auto_now=True)
-    usuario_reg = models.CharField(max_length=40, null=True, blank=True)
+    usuario_reg = models.CharField(max_length=150, null=True, blank=True)
    
     def __str__(self):
-        return self.turno
+        return self.cas.descripCas+"/"+self.turno +"/"+self.frecuencia
+
+class asigCuposPac(models.Model):
+    parameCentroPuesto = models.OneToOneField(parameCentroPuesto, on_delete=models.CASCADE, unique=True)
+    paciente = models.OneToOneField(paciente, on_delete=models.CASCADE, unique=True)
+    fechaAsigCupo = models.DateField(null=True, blank=True)
+    fecha_reg = models.DateField(auto_now=True)
+    usuario_reg = models.CharField(max_length=150, null=True, blank=True)
+
+class asistenciaPaciente(models.Model):
+    paciente = models.OneToOneField(paciente, on_delete=models.CASCADE, unique=True)
+    fechaAsisPac = models.DateField()
+    estadoAsistencia = models.CharField(max_length=30)
+    fecha_reg = models.DateField(auto_now=True)
+    usuario_reg = models.CharField(max_length=150, null=True, blank=True)
+   
+    def __str__(self):
+        return self.paciente.nombres
+    

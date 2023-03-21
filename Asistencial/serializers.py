@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from Asistencial.models import parameCentroPuesto,parameCentro,docuContratados,maestroMatSap,parNuticion,delegacionBienesEstra, cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, listaEspera
+from Asistencial.models import asistenciaPaciente,asigCuposPac,parameCentroPuesto,parameCentro,docuContratados,maestroMatSap,parNuticion,delegacionBienesEstra, cas ,usuario, paciente, examen, archivo, personalCertificado, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat, dependencia, ambiente, personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, listaEspera
 from rest_framework import serializers
 
 from datetime import datetime
@@ -211,4 +211,17 @@ class parameCentroPuestoSerializer(serializers.HyperlinkedModelSerializer):
     datosCas = casSerializer(source = "cas", read_only=True)
     class Meta:
         model = parameCentroPuesto
+        fields = '__all__'
+
+class asigCuposPacSerializer(serializers.HyperlinkedModelSerializer):
+    datosPueto = parameCentroPuestoSerializer(source = "parameCentroPuesto", read_only=True)
+    datosPaciente = PacienteSerializer(source="paciente", read_only=True)
+    class Meta:
+        model = asigCuposPac
+        fields = '__all__'
+
+class asistenciaPacienteSerializer(serializers.HyperlinkedModelSerializer):
+    datosPaciente = PacienteSerializer(source="paciente", read_only=True)
+    class Meta:
+        model = asistenciaPaciente
         fields = '__all__'
