@@ -63,7 +63,6 @@ router.register(r'docuContratados', viewsAsis.docuContratadosViewSet)
 router.register(r'parameCentro', viewsAsis.parameCentroViewSet)
 router.register(r'parameCentroPuesto', viewsAsis.parameCentroPuestoViewSet)
 router.register(r'asigCuposPac', viewsAsis.asigCuposPacViewSet)
-router.register(r'asistenciaPaciente', viewsAsis.asistenciaPacienteViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

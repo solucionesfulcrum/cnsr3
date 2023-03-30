@@ -439,13 +439,3 @@ class asigCuposPac(models.Model):
     fecha_reg = models.DateField(auto_now=True)
     usuario_reg = models.CharField(max_length=150, null=True, blank=True)
 
-class asistenciaPaciente(models.Model):
-    paciente = models.OneToOneField(paciente, on_delete=models.CASCADE, unique=True)
-    fechaAsisPac = models.DateField()
-    estadoAsistencia = models.CharField(max_length=30)
-    fecha_reg = models.DateField(auto_now=True)
-    usuario_reg = models.CharField(max_length=150, null=True, blank=True)
-   
-    def __str__(self):
-        return self.paciente.nombres
-    
