@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Asistencial.models import asigCuposPac,parameCentroPuesto,parameCentro,docuContratados, parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra, listaEspera
+from Asistencial.models import asisPacDiario,asigCuposPac,parameCentroPuesto,parameCentro,docuContratados, parNuticion, maestroMatSap,cas,usuario, paciente, examen, archivo, presAnemia, admiAnemia, exclusionAnemia, movimientoAnemia, bienAmbiente, bienPersonal, bienpat,dependencia,ambiente,personal, bienImag, proveedor, provMaq, maestro, incidenciaDsi, bienHadware, bienSoftware, bienDetalleMonitor, nutricion, personalVpn, personalCertificado, valGlobalSub, delegacionBienesEstra, listaEspera
 
 # Ubicacion usuario
 class casAdmin(admin.ModelAdmin):
@@ -155,6 +155,10 @@ class asigCuposPacAdmin(admin.ModelAdmin):
     list_display = ('parameCentroPuesto','paciente','fechaAsigCupo','fecha_reg','usuario_reg')
     search_fields = ('usuario_reg',)
 
+class asisPacDiarioAdmin(admin.ModelAdmin):
+    list_display = ('asigCuposPac','estadoAsistencia','observaFalta','usuario_reg','fecha_reg','validacionAsistencia')
+    search_fields = ('validacionAsistencia',)
+
 admin.site.register(cas, casAdmin)
 
 admin.site.register(usuario, usuarioAdmin)
@@ -201,5 +205,7 @@ admin.site.register(docuContratados, docuContratadosAdmin)
 
 admin.site.register(parameCentro, parameCentroAdmin)
 admin.site.register(parameCentroPuesto, parameCentroPuestoAdmin)
+admin.site.register(asigCuposPac, asigCuposPacAdmin)
+admin.site.register(asisPacDiario, asisPacDiarioAdmin)
 
 

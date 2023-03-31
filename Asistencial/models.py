@@ -439,3 +439,15 @@ class asigCuposPac(models.Model):
     fecha_reg = models.DateField(auto_now=True)
     usuario_reg = models.CharField(max_length=150, null=True, blank=True)
 
+    def __str__(self):
+        return self.parameCentroPuesto.cas.descripCas+"/"+self.parameCentroPuesto.turno+"/"+self.parameCentroPuesto.frecuencia+"/"+self.paciente.nombres
+class asisPacDiario(models.Model):
+    asigCuposPac = models.ForeignKey(asigCuposPac, on_delete=models.CASCADE)
+    estadoAsistencia = models.CharField(max_length=30)
+    observaFalta = models.CharField(max_length=150, null=True, blank=True)
+    usuario_reg = models.CharField(max_length=150)
+    fecha_reg = models.DateField(auto_now=True)
+    validacionAsistencia = models.CharField(max_length=150, unique=True)
+
+    def __str__(self):
+        return self.usuario_reg
