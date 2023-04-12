@@ -7,6 +7,7 @@ class cas(models.Model):
     descripCas = models.CharField(max_length=100)
     tipoCas = models.CharField(max_length=10)
     distrito = models.CharField(max_length=100)
+    estado = models.BooleanField()
 
     def __str__(self):
         return (self.descripCas)

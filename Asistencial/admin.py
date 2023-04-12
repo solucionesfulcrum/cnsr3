@@ -3,7 +3,7 @@ from Asistencial.models import asisPacDiario,asigCuposPac,parameCentroPuesto,par
 
 # Ubicacion usuario
 class casAdmin(admin.ModelAdmin):
-    list_display = ('codCas','descripCas','tipoCas','distrito')
+    list_display = ('codCas','descripCas','tipoCas','distrito','estado')
     search_fields = ('tipoCas',)
 
 # Seguridad

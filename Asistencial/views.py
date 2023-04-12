@@ -11,7 +11,7 @@ class casViewSet(viewsets.ModelViewSet):
     serializer_class = casSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=tipoCas']
+    search_fields = ['=tipoCas','^estado','=distrito']
 
 
 class usuarioViewSet(viewsets.ModelViewSet):
@@ -337,7 +337,7 @@ class asigCuposPacViewSet(viewsets.ModelViewSet):
     serializer_class = asigCuposPacSerializer
     permission_classes = [permissions.IsAuthenticated]    
     filter_backends = [filters.SearchFilter]
-    search_fields = ['=parameCentroPuesto__cas__id',]
+    search_fields = ['=parameCentroPuesto__cas__id','=paciente__num_doc']
 
 class asisPacDiarioViewSet(viewsets.ModelViewSet):
     """
