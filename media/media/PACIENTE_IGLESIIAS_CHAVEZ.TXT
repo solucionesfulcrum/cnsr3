@@ -1,0 +1,119 @@
+@M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  Página :          1
+Servicios Contratados 3.2                                         Fecha  : 17/04/2023
+Programa : sccnsacp.frx                                           Hora   :   20:29:55
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 6801061IECVW000
+Nombre       : IGLESIAS CHAVEZ WALTER ABNER            
+
+Unidad de Informática
+-------------------------------------------------------------------------------------
+  Día Código   Análisis Clínico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+ MARZO DEL 2,023     
+  16  4000042  PLAQUETAS                            plaq        179000.00 mm3       
+  16  4000002  UREA POST                            UPost           70.00 mg/dl     
+  16  4000001  UREA PRE                             UPre           172.00 mg/dl     
+  16  3330420  LINFOCITOS                           LINFO           33.50 %         
+  16  3330419  HEMOGLOBINA                          Hb              11.80 g/dl      
+  16  3330418  HEMATOCRITO                          HTO             35.60 %         
+  16  3330417  MONOCITOS                            MONO             7.40 %         
+  16  3330416  BASOFILOS                            pBAS             0.10 %         
+  16  3330415  EOSINOFILOS                          EOS              1.60 %         
+  16  3330414  SEGMENTADOS                          Seg             57.40 %         
+  16  3330412  LEUCOCITOS                           LEUCO         9600.00 mm3       
+  16  3330161  ALBUMINA                             Alb              3.80 g/dl      
+  16  3330160  PROTEINAS TOTALES                    PT               6.50 g/dl      
+  16  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO              6.00 U/L       
+  16  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP              5.00 U/L       
+   
+ FEBRERO DEL 2,023   
+  16  4000045  CONCENTRACION MEDIO HEMOGLOBINA      CMHC            33.30 g/dl      
+  16  4000044  HEMOGLOBINA GLOBULAR                 HCM             31.70 pg        
+  16  4000043  VOLUMEN CORPUSCULAR MEDIO            VCM             95.30 fl        
+  16  4000042  PLAQUETAS                            plaq        188000.00 mm3       
+  16  4000041  TRANSFERRINA                         TFERRINA       163.00 mg/dl     
+  16  4000040  ANTICUERPO DE VIH 1-2                AntVIH     NO REACTIV           
+  16  4000037  PORCENTAJE DE SATURACION             POR_SAT         26.00 %         
+  16  4000033  PROTEINA C REACTIVA                  PCR              0.38 mg/dl     
+  16  4000026  FIERRO                               Fe              10.50 umol/L    
+  16  4000010  CREATININA POST                      CreaPost         4.30 mg/dl     
+  16  4000009  CREATININA PRE                       CreaPre         12.30 mg/dl     
+  16  4000008  ANTICUERPO HEPATITIS C               AntHC      NO REACTIV           
+  16  4000005  AntiCoreT                            AntiCoreT  NO REACTIV           
+  16  4000003  ANTIGENO DE SUPERFICIE HEPATITIS B   AgHBs      NO REACTIV           
+  16  4000002  UREA POST                            UPost           59.00 mg/dl     
+  16  4000001  UREA PRE                             UPre           208.00 mg/dl     
+  16  3330420  LINFOCITOS                           LINFO           28.70 %         
+  16  3330419  HEMOGLOBINA                          Hb              13.80 g/dl      
+  16  3330418  HEMATOCRITO                          HTO             41.50 %         
+  16  3330417  MONOCITOS                            MONO             7.60 %         
+  16  3330416  BASOFILOS                            pBAS             0.10 %         
+  16  3330415  EOSINOFILOS                          EOS              2.20 %         
+  16  3330414  SEGMENTADOS                          Seg             61.40 %         
+  16  3330412  LEUCOCITOS                           LEUCO         9470.00 mm3       
+  16  3330147  VDRL                                 VDRL       NO REACTIV           
+  16  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO              7.00 U/L       
+  16  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP              9.00 U/L       
+   @M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  Página :          2
+Servicios Contratados 3.2                                         Fecha  : 17/04/2023
+Programa : sccnsacp.frx                                           Hora   :   20:29:55
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 6801061IECVW000
+Nombre       : IGLESIAS CHAVEZ WALTER ABNER            
+
+Unidad de Informática
+-------------------------------------------------------------------------------------
+  Día Código   Análisis Clínico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+  16  3330116  FOSFORO                              pP               6.80 mg/dl     
+  16  3330115  FOSFATASA ALCALINA                   Fal      p     108.00 U/L       
+  16  3330104  CALCIO SERICO                        Ca               8.60 mg/dl     
+   
+ ENERO DEL 2,023     
+  19  4000042  PLAQUETAS                            plaq        194000.00 mm3       
+  19  4000002  UREA POST                            UPost           62.00 mg/dl     
+  19  4000001  UREA PRE                             UPre           181.00 mg/dl     
+  19  3330420  LINFOCITOS                           LINFO           31.30 %         
+  19  3330419  HEMOGLOBINA                          Hb              13.60 g/dl      
+  19  3330418  HEMATOCRITO                          HTO             41.70 %         
+  19  3330417  MONOCITOS                            MONO             6.80 %         
+  19  3330416  BASOFILOS                            pBAS             0.10 %         
+  19  3330415  EOSINOFILOS                          EOS              2.10 %         
+  19  3330414  SEGMENTADOS                          Seg             59.70 %         
+  19  3330412  LEUCOCITOS                           LEUCO         8520.00 mm3       
+  19  3330161  ALBUMINA                             Alb              4.20 g/dl      
+  19  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO              7.00 U/L       
+  19  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP              8.00 U/L       
+  19  3330116  FOSFORO                              pP               6.60 mg/dl     
+  19  3330104  CALCIO SERICO                        Ca               8.30 mg/dl     
+   
+-------------------------------------------------------------------------------------
+*** FIN DE REPORTE ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

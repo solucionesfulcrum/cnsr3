@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.gis.geos import GE
+from django.contrib.gis.db import models as gis_models
+
 # Ubicacion usuario
 
 class cas(models.Model):
@@ -8,7 +9,10 @@ class cas(models.Model):
     tipoCas = models.CharField(max_length=10)
     distrito = models.CharField(max_length=100)
     estado = models.BooleanField()
-    cordenadasCas = models.Point
+    latitud = models.CharField(max_length=100, null=True, blank=True)
+    longitud = models.CharField(max_length=100, null=True, blank=True)
+    cordeCas = gis_models.PointField("Location in Map", geography=True, blank=True, null=True,srid=4326, help_text="Point(longitude latitude)")
+
 
     def __str__(self):
         return (self.descripCas)
@@ -44,6 +48,10 @@ class paciente(models.Model):
     sexo = models.CharField(max_length=10, null=True)
     cas = models.ForeignKey(cas, on_delete=models.CASCADE)
     estado = models.CharField(max_length=5, default=1)
+    latitud = models.CharField(max_length=100, null=True, blank=True)
+    longitud = models.CharField(max_length=100, null=True, blank=True)
+    cordePac = gis_models.PointField("Location in Map", geography=True, blank=True, null=True,srid=4326, help_text="Point(longitude latitude)")
+
 
     def __str__(self):
         return (self.nombres+' '+self.ape_pat+' '+self.ape_mat)

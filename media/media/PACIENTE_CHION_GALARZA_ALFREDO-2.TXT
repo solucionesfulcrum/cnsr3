@@ -1,0 +1,60 @@
+@M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  P gina :          1
+Servicios Contratados 3.2                                         Fecha  : 08/05/2023
+Programa : sccnsacp.frx                                           Hora   :   09:14:38
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 8103151COGAA004
+Nombre       : CHION GALARZA ALFREDO ALEX              
+
+Unidad de Inform tica
+-------------------------------------------------------------------------------------
+  D¡a C¢digo   An lisis Cl¡nico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+ MAYO DEL 2,023      
+  04  4000042  PLAQUETAS                            plaq        147000.00 mm3       
+  04  4000008  ANTICUERPO HEPATITIS C               AntHC      NO REACTIV           
+  04  4000005  AntiCoreT                            AntiCoreT  NO REACTIV           
+  04  4000004  ANTICUERPO C/ANTIGENO DE SUPERFICIE  AntHBs     NO REACTIV UI        
+  04  4000003  ANTIGENO DE SUPERFICIE HEPATITIS B   AgHBs      NO REACTIV           
+  04  4000002  UREA POST                            UPost           51.00 mg/dl     
+  04  4000001  UREA PRE                             UPre     T     129.00 mg/dl     
+  04  3330420  LINFOCITOS                           LINFO            4.90 %         
+  04  3330419  HEMOGLOBINA                          Hb              10.50 g/dl      
+  04  3330418  HEMATOCRITO                          HTO             32.60 %         
+  04  3330417  MONOCITOS                            MONO             5.70 %         
+  04  3330416  BASOFILOS                            pBAS             0.20 %         
+  04  3330415  EOSINOFILOS                          EOS              3.20 %         
+  04  3330414  SEGMENTADOS                          Seg             86.00 %         
+  04  3330412  LEUCOCITOS                           LEUCO        12150.00 mm3       
+  04  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO             18.00 U/L       
+  04  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP             14.00 U/L       
+  04  3330116  FOSFORO                              pP               3.20 mg/dl     
+  04  3330104  CALCIO SERICO                        Ca               8.50 mg/dl     
+   
+-------------------------------------------------------------------------------------
+*** FIN DE REPORTE ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

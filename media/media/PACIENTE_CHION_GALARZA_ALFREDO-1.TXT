@@ -1,0 +1,119 @@
+@M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  P gina :          1
+Servicios Contratados 3.2                                         Fecha  : 08/05/2023
+Programa : sccnsacp.frx                                           Hora   :   09:15:17
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 8103151COGAA004
+Nombre       : CHION GALARZA ALFREDO ALEX              
+
+Unidad de Inform tica
+-------------------------------------------------------------------------------------
+  D¡a C¢digo   An lisis Cl¡nico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+ ABRIL DEL 2,023     
+  28  4000059  VITAMINA B12                         B12            871.80 pg/ml     
+  28  4000058  ACIDO FOLICO                         FOLATO           8.40 ng/ml     
+  28  4000045  CONCENTRACION MEDIO HEMOGLOBINA      CMHC            31.80 g/dl      
+  28  4000045  CONCENTRACION MEDIO HEMOGLOBINA      CMHC            31.80 g/dl      
+  28  4000044  HEMOGLOBINA GLOBULAR                 HCM             29.20 pg        
+  28  4000044  HEMOGLOBINA GLOBULAR                 HCM             29.20 pg        
+  28  4000043  VOLUMEN CORPUSCULAR MEDIO            VCM             91.90 fl        
+  28  4000043  VOLUMEN CORPUSCULAR MEDIO            VCM             91.90 fl        
+  28  4000042  PLAQUETAS                            plaq        231000.00 mm3       
+  28  4000042  PLAQUETAS                            plaq        231000.00 mm3       
+  28  4000041  TRANSFERRINA                         TFERRINA       187.00 mg/dl     
+  28  4000040  ANTICUERPO DE VIH 1-2                AntVIH     NO REACTIV           
+  28  4000037  PORCENTAJE DE SATURACION             POR_SAT         31.00 %         
+  28  4000033  PROTEINA C REACTIVA                  PCR              0.48 mg/dl     
+  28  4000030  PARATHORMONAS                        PTH             91.33 pg/ml     
+  28  4000028  FERRITINA                            Ferritina      259.60 ng/ml     
+  28  4000026  FIERRO                               Fe              14.40 umol/L    
+  28  4000009  CREATININA PRE                       CreaPre          6.00 mg/dl     
+  28  4000008  ANTICUERPO HEPATITIS C               AntHC      NO REACTIV           
+  28  4000005  AntiCoreT                            AntiCoreT  NO REACTIV           
+  28  4000004  ANTICUERPO C/ANTIGENO DE SUPERFICIE  AntHBs     NO REACTIV UI        
+  28  4000003  ANTIGENO DE SUPERFICIE HEPATITIS B   AgHBs      NO REACTIV           
+  28  4000001  UREA PRE                             UPre     T     115.00 mg/dl     
+  28  3330420  LINFOCITOS                           LINFO           15.50 %         
+  28  3330420  LINFOCITOS                           LINFO           15.50 %         
+  28  3330419  HEMOGLOBINA                          Hb              10.90 g/dl      
+  28  3330419  HEMOGLOBINA                          Hb              10.90 g/dl      
+  28  3330418  HEMATOCRITO                          HTO             34.20 %         
+  28  3330418  HEMATOCRITO                          HTO             34.20 %         
+  28  3330417  MONOCITOS                            MONO             6.30 %         
+  28  3330417  MONOCITOS                            MONO             6.30 %         
+  28  3330416  BASOFILOS                            pBAS             0.50 %         
+  28  3330416  BASOFILOS                            pBAS             0.50 %         
+  28  3330415  EOSINOFILOS                          EOS             14.40 %         
+  28  3330415  EOSINOFILOS                          EOS             14.40 %         
+  28  3330414  SEGMENTADOS                          Seg             63.30 %         
+  28  3330414  SEGMENTADOS                          Seg             63.30 %         
+  28  3330412  LEUCOCITOS                           LEUCO         7480.00 mm3       
+  28  3330412  LEUCOCITOS                           LEUCO         7480.00 mm3       
+  28  3330161  ALBUMINA                             Alb              3.80 g/dl      
+  28  3330160  PROTEINAS TOTALES                    PT               7.80 g/dl      
+  28  3330147  VDRL                                 VDRL       NO REACTIV           
+  28  3330145  COLESTEROL LDL                       LDL             84.00 mg/dl     
+  28  3330144  COLESTEROL HDL                       HDL             46.00 mg/dl     
+   @M                                              
+CENTRO DE HEMODIALISIS - ESSALUD                                  P gina :          2
+Servicios Contratados 3.2                                         Fecha  : 08/05/2023
+Programa : sccnsacp.frx                                           Hora   :   09:15:17
+
+                           RESULTADOS DE ANALISIS CLINICOS                           
+
+Autogenerado : 8103151COGAA004
+Nombre       : CHION GALARZA ALFREDO ALEX              
+
+Unidad de Inform tica
+-------------------------------------------------------------------------------------
+  D¡a C¢digo   An lisis Cl¡nico                     Abrev.      Resultado Unidad
+-------------------------------------------------------------------------------------
+  28  3330133  TRANSAMINASA GLUTAMICO OXALACETICO   TGO             18.00 U/L       
+  28  3330132  TRANSAMINASA GLUTAMICO PIRUVICO      TGP             17.00 U/L       
+  28  3330116  FOSFORO                              pP               4.40 mg/dl     
+  28  3330115  FOSFATASA ALCALINA                   Fal      p     124.00 U/L       
+  28  3330107  COLESTEROL                           COL            149.00 mg/dl     
+  28  3330106  TRIGLICERIDOS                        TG              61.00 mg/dl     
+  28  3330104  CALCIO SERICO                        Ca               9.40 mg/dl     
+  28  3330101  ACIDO URICO                          ado              5.90 mg/dl     
+   
+-------------------------------------------------------------------------------------
+*** FIN DE REPORTE ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

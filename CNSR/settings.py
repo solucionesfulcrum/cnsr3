@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'Asistencial.apps.AsistencialConfig',
     'rest_framework',
     'drf_yasg',
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'CNSR.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'bdAsistencial',
         'USER': 'postgres',
         'PASSWORD': '123456',
-        'HOST': '10.0.54.201',
+        'HOST': '10.0.52.25',
         'PORT': '5432',
     }
 }

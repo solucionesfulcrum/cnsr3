@@ -18,6 +18,8 @@ class maestroAdmin(admin.ModelAdmin):
 
 class pacienteAdmin(admin.ModelAdmin):
     list_display = ('tipo_doc','num_doc','ape_pat','ape_mat','nombres','fecha_nac','sexo','cas','estado')
+    ordering = ['ape_pat',]
+    search_fields = ('ape_pat',)
 
 class examenAdmin(admin.ModelAdmin):
     list_display = ('paciente','tipo_exam','archivo_exam','estado_lectura','estado','fecha_reg','user_reg','fecha_mod','user_mod','fecha_eli','user_eli')
@@ -153,7 +155,9 @@ class parameCentroPuestoAdmin(admin.ModelAdmin):
 
 class asigCuposPacAdmin(admin.ModelAdmin):
     list_display = ('parameCentroPuesto','paciente','fechaAsigCupo','fecha_reg','usuario_reg')
+    autocomplete_fields = ('paciente',)
     search_fields = ('usuario_reg',)
+    
 
 class asisPacDiarioAdmin(admin.ModelAdmin):
     list_display = ('asigCuposPac','estadoAsistencia','observaFalta','usuario_reg','fecha_reg','validacionAsistencia')
